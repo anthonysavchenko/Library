@@ -1,2 +1,2 @@
 # sandbox
-Just sandbox to take some practice and try different technologies
+Just my personal sandbox to take some practice and try different technologies
