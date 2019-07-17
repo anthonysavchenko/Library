@@ -10,6 +10,8 @@ And here will try some markdown
 
 # Italic / Bold
 *Italic*
+
 **Bold**
+
 *Just bold **but this is italic also***
 
