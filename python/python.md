@@ -100,3 +100,55 @@ while num > 0:
     print(num)
     num //= 2
 ```
+
+## Functions
+```python
+def get_greeting(first_name, last_name="Doe", number=1):
+    return f"{number}. Hello, {first_name} {last_name}!"
+
+
+print(get_greeting("John", "Smith", number=5))
+```
+**Notes:**
+- `first_name` and `last_name` are parameters, `"John"` and `"Smith"` are arguments.
+- All functions return `None` value by default.
+
+```python
+def multiply(*numbers):     # tuple parameters - (2, 3, 4, 5)
+    total = 1
+    for number in numbers:
+        total *= number
+    return total
+
+
+print(multiply(2, 3, 4, 5))
+```
+
+```python
+def save_user(**user):  # dictionary parameters - [ key: value, ..., key: value ]
+    print(user["name"])
+
+
+save_user(id=1,
+          name="John",
+          age=22)
+```
+
+```python
+message = "a"      # global scope variable
+
+
+def func1():
+    message = "b"  # new local scope variable
+
+
+def func2():
+    global message
+    message = "c"  # global scope variable
+
+
+func1()
+print(message)     # a
+func2()
+print(message)     # c
+```
