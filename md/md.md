@@ -1,21 +1,29 @@
 # Markdawn language (MD)
 
-## 1. Text decoration
+## Text decoration
 **Bold text**
-*Italic text*
-~~Strikethrough text~~
-http://Hyperlink.text/
 
-## 1. Emoji
+*Italic text*
+
+~~Strikethrough text~~
+
+<del>Strikethrough text</del>
+
+http://hyperlink.text/
+
+[hyperlink](http://hyperlink.com/)
+
+## Emoji
 :smile:
+
 :+1:
 
-## 1. Headers
+## Headers
 # Header 1
 ## Header 2
 #### Header 3
 
-## 1. Lists
+## Lists
 2. One
 2. Two
 2. Three
@@ -28,7 +36,11 @@ http://Hyperlink.text/
 - Two
 - Three
 
-## 1. Code
+- [x] One
+- [ ] Two
+- [ ] Three
+
+## Code
 ```javascript
 function fancyAlert(arg) {
   if(arg) {
@@ -37,11 +49,12 @@ function fancyAlert(arg) {
 }
 ```
 
-## 1. Quotes
+## Quotes
 > If you don't build your dream someone will hire you to help build theirs.
+
 `Tony Gaskins`
 
-## 1. Tables
+## Tables
 Header 1 | Header 2
 ---------|---------
 Content for the first column | Content for the second column

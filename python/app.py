@@ -63,10 +63,58 @@ age = 22
 print("eligible" if age >= 18 else "not eligible")
 
 high_income = True
-good_credit_scpre = False
+good_credit_score = False
 student = False
 
-if (high_income or good_credit_scpre) and not student:
+# short-circuit evaluation
+if (high_income or good_credit_score) and not student:
     print("eligible")
 else:
     print("not eligible")
+
+# chaining comparison operators
+age = 22
+if 18 <= age < 65:
+    print("that's ok")
+else:
+    print("it's a bad idea")
+
+for number in range(1, 10, 2):
+    print("Attempt", number, number * ".")
+
+# for...else
+succesful = True
+for count in range(3):
+    print("Attempt")
+    if (succesful):
+        print("Successful")
+        break
+else:
+    print("Attempted 3 times and failed")
+
+print("\n\n")
+
+for i in range(5):
+    for j in range(3):
+        print(f"({i}, {j})")
+
+print("\n\n")
+
+# iterable:
+# range
+# string
+# list
+
+num = 100
+while num > 0:
+    print(num)
+    num //= 2
+
+print("\n\n")
+
+m = 0
+for t in range(1, 10):
+    if t % 2 == 0:
+        print(t)
+        m += 1
+print(f"We have {m} even numbers")
