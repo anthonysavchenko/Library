@@ -61,10 +61,42 @@ print(math.ceil(3.1415))   # 4 (closest int >= 3.1415)
 * `None`
 
 ## If
+```python
+age = 22
+regular_customer = False
 
+# short-curcuit evaluation
+if 18 <= age and age < 65 or regular_customer:
+    print("eligible")
+elif age < 18:
+    print("too young")
+else:
+    print("too old")
+
+# ternary operator
+# chaining comparison operator
+print("eligible" if 18 <= age < 65 or regular_customer else "not eligible")
+```
 
 ## For
+```python
+for number in range(1, 10, 2):
+    print(number * ".")
 
+# for else
+for char in "Hello, world!":
+    if (char == ","):
+        break
+    print(char)
+else:
+    print("!")
+    print("!")
+```
 
 ## While
-
+```python
+num = 100
+while num > 0:
+    print(num)
+    num //= 2
+```
