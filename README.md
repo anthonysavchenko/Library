@@ -8,3 +8,4 @@ Just my personal **sandbox** to take some practice and try different *technologi
 
 ## Questions and future ideas
 * Find English spell checker extension for VS Code.
+* Find extension for preview Markdown.

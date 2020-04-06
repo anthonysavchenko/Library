@@ -47,3 +47,43 @@ def binary_search(items, search_for):
 
 print(binary_search([1, 5, 6, 10, 12], 6))
 ```
+
+
+## Arrays and Linked Lists
+
+Arrays are good at random reading.
+Linked lists are good at writing (or deleting) at the beginnig or at the end of structure and at sequential reading whole structure.
+
+Operation | Arrays | Linked Lists
+----------|--------|-------------
+Reading | O(1) | O(n)
+Insertion | O(n) | O(1)
+Deletion | O(n) | O(1)
+
+
+## Selection sort
+
+O(n<sup>2</sup>)
+
+```python
+def find_smallest(items):
+    index_of_smallest = 0
+
+    for i in range(1, len(items)):
+        if items[i] < items[index_of_smallest]:
+            index_of_smallest = i
+
+    return index_of_smallest
+
+
+def selection_sort(items):
+    sorted_items = []
+
+    while len(items) > 0:
+        sorted_items.append(items.pop(find_smallest(items)))
+
+    return sorted_items
+
+
+print(selection_sort([5, 3, 6, 2, 10]))
+```

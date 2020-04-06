@@ -18,9 +18,20 @@ mean a new paragraph
 ~~Strikethrough text~~  
 <del>Strikethrough text</del>  
 Super<sup>script</sup>  
-Sub<sub>script</sub>  
+Sub<sub>script</sub>
+
+
+## Links
+
 http://hyperlink.text/  
+<http://hyperlink.text/>  
 [hyperlink](http://hyperlink.com/)  
+[hyperlink](http://hyperlink.com/ "With tooltip text")  
+**[hyperlink](http://hyperlink.com/)**  
+[`hyperlinked code`](http://hyperlink.com/)
+[refereced hyperlink] [label]
+
+[label]: http://hyperlink/ "Tooltip text"
 
 
 ## Emoji
@@ -64,6 +75,13 @@ http://hyperlink.text/
 
 ## Code
 
+`Inline code`
+
+    <html>
+      <body>
+      </body>
+    </html>
+
 ```javascript
 function fancyAlert(arg) {
   if(arg) {
@@ -78,7 +96,16 @@ function fancyAlert(arg) {
 > ### This may contain other formating and nested quotes
 >> If you don't build your dream someone will hire you to help build theirs.
 >
-> `Tony Gaskins`
+> *Tony Gaskins*
+
+
+# Horizotal Rule
+
+***
+
+---
+
+___
 
 
 ## Tables
@@ -87,3 +114,16 @@ Header 1 | Header 2
 ---------|---------
 Content for the first column | Content for the second column
 And next row | And fourth cell
+
+
+## Images
+
+![Alt text](https://avatars0.githubusercontent.com/u/44915627 "Tooltip text")  
+[![Alt text](https://avatars0.githubusercontent.com/u/44915627 "Tooltip text")](http://hyperlinked.image)
+
+
+## Escape characters
+
+``Escape `backtiks` into inline code``  
+\* Escaping bullets and \**other** \(formting)
+
