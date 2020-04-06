@@ -124,6 +124,6 @@ And next row | And fourth cell
 
 ## Escape characters
 
-``Escape `backtiks` into inline code``  
-\* Escaping bullets and \*\*other\*\* \(formating\)
+``Escape `backticks` into inline code``  
+\* Escaping bullets and \*\*any\*\* \[other\]\(formating\)
 
