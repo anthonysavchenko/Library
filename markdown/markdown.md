@@ -25,13 +25,13 @@ Sub<sub>script</sub>
 
 http://hyperlink.text/  
 <http://hyperlink.text/>  
-[hyperlink](http://hyperlink.com/)  
-[hyperlink](http://hyperlink.com/ "With tooltip text")  
-**[hyperlink](http://hyperlink.com/)**  
-[`hyperlinked code`](http://hyperlink.com/)
-[refereced hyperlink] [label]
+[hyperlink](http://hyperlink.text/)  
+[hyperlink](http://hyperlink.text/ "With tooltip text")  
+**[hyperlink](http://hyperlink.text/)**  
+[`hyperlinked code`](http://hyperlink.text/)  
+[refereced hyperlink][label]
 
-[label]: http://hyperlink/ "Tooltip text"
+[label]: http://hyperlink.text/ "Tooltip text"
 
 
 ## Emoji
@@ -125,5 +125,5 @@ And next row | And fourth cell
 ## Escape characters
 
 ``Escape `backtiks` into inline code``  
-\* Escaping bullets and \**other** \(formting)
+\* Escaping bullets and \*\*other\*\* \(formating\)
 
