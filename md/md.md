@@ -7,32 +7,30 @@ mean a new line
 
 Double returns
 
-mean a new paragraph
+mean a new paragraph  
+
 
 ## Text decoration
 
-**Bold text**
-
-*Italic text*
-
-***Bold and Italic text***
-
-~~Strikethrough text~~
-
-<del>Strikethrough text</del>
-
-http://hyperlink.text/
-
-[hyperlink](http://hyperlink.com/)
+**Bold text**  
+*Italic text*  
+***Bold and Italic text***  
+~~Strikethrough text~~  
+<del>Strikethrough text</del>  
+Super<sup>script</sup>  
+Sub<sub>script</sub>  
+http://hyperlink.text/  
+[hyperlink](http://hyperlink.com/)  
 
 
 ## Emoji
 
-:smile:
-
+:smile:  
 :+1:
 
+
 ## Headers
+
 # Header 1
 ## Header 2
 #### Header 3
@@ -42,8 +40,8 @@ http://hyperlink.text/
 
 1. One
 5. Two
-5. Three
     1. Indeted item
+5. Three
 
     This may contain other formating
 
