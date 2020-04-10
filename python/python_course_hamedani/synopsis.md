@@ -240,7 +240,7 @@ def multiply(*numbers):
 
 
 print(multiply(2, 3, 4, 5))
-# Output: 
+# Output: 120
 ```
 
 ### Dictionary packing parameters
@@ -248,41 +248,42 @@ print(multiply(2, 3, 4, 5))
 ```py
 # User is a dictionary - [ key1: value1, ..., keyN: valueN ].
 def save_user(**user):
-    print(user["name"])
+    print(user['name'])
 
 
 save_user(id=1,
           name="John",
           age=22)
+# Output: John
 ```
 
 
 ### Scope
 
 ```py
-message = "a"                                         # global scope variable
+# Global scope variable.
+message = "a"
 
 
 def func1():
-    message = "b"                                     # new local scope variable
+    # New local scope variable.
+    message = "b"
 
 
 def func2():
+    # Access to global scope variable.
     global message
-    message = "c"                                     # global scope variable
+    message = "c"
 
 
 func1()
-print(message)                                        # a
+print(message)
+# Output: a
 func2()
-print(message)                                        # c
+print(message)
+# Output: c
 ```
 
-Columns inside comments, quotes in strings, comments style.
-Margin
-Excercises
-Preview
-Other books
 
 ## Lists
 
@@ -724,7 +725,7 @@ print("List:", getsizeof(values), "bytes")
 ```
 
 
-# Unpacking operator
+## Unpacking operator
 
 ```py
 numbers = [1, 2, 3]

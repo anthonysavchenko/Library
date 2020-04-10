@@ -2,10 +2,16 @@
 
 Just my personal **sandbox** to take some practice and try different *technologies*.
 
-[Markdown](https://github.com/anthonysavchenko/sandbox/blob/master/markdown/markdown.md)  
-[Python](https://github.com/anthonysavchenko/sandbox/blob/master/python/python.md)  
+[Markdown](https://github.com/anthonysavchenko/sandbox/blob/master/markdown/markdown.md)
+
+* Python
+
+    * [The Complete Python Course. Mosh Hamedani](https://github.com/anthonysavchenko/sandbox/blob/master/python_course_hamedani/sysnopsis.md)
+
 [Algorithms and Data Structures](https://github.com/anthonysavchenko/sandbox/blob/master/algorithms/grokking_algorithms_bhargava.md)
 
 ## Questions and future ideas
+
 * Find English spell checker extension for VS Code.
 * Find extension for preview Markdown.
+* What is tail recursion?
