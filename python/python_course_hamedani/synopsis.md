@@ -700,6 +700,7 @@ print(values)
 # Output: {0: 0, 1: 2, 2: 4, 3: 6, 4: 8}
 ```
 
+
 ## Generator object
 
 Generator object doesn't store items in the memory, it generats them when it's necessary.
@@ -758,3 +759,86 @@ second = {'x': 10, 'y': 2}
 print({**first, **second, 'z': 3})
 # Output: {'x': 10, 'y': 2, 'z': 3}
 ```
+
+
+## Exceptions
+
+```py
+def calculate_xfactor(age):
+    if age <= 0:
+        # Throws exception.
+        raise ValueError("Age can not be 0 or less.")
+    return 10 / age
+
+
+# Defines code block with exception handling.
+try:
+    file = open("app.py")
+    age = int(input("Age: "))
+    calculate_xfactor(age)
+# Catches exceptions.
+except (ValueError, ZeroDivisionError) as ex:
+    print(type(ex))
+    print(ex)
+    print("You didn't enter a valid age.")
+# Catches other exceptions.
+except FileNotFoundError:
+    print("File can not be found.")
+# Works when no exceptions were thrown.
+else:
+    print("No exceptions were thrown")
+# Works either any exceptions where thrown or not.
+finally:
+    file.close()
+
+
+try:
+    # The with statement is used to automatically release external resources,
+    # either any exceptions where thrown or not. So we don't need finally
+    # statement in this case.
+    # This can be done when class supports Context Management Protocol
+    # or (wich is the same) it has two methods: __enter__ and __exit__.
+    with open("source.txt") as source, open("target.txt") as target:
+        print("Files opened.")
+except FileNotFoundError:
+    print("Files can not be found.")
+```
+
+```py
+from timeit import timeit
+
+
+codeWithException = """
+def calculate_xfactor(age):
+    if age <= 0:
+        raise ValueError("Age can not be 0 or less.")
+    return 10 / age
+
+
+try:
+    calculate_xfactor(-1)
+except ValueError as error:
+    pass
+"""
+
+
+codeWithoutException = """
+def calculate_xfactor(age):
+    if age <= 0:
+        return None
+    return 10 / age
+
+
+xfactor = calculate_xfactor(-1)
+if xfactor == None:
+    pass
+"""
+
+
+# Raising exceptions has its cost, so it should be done when it is really necessary.
+print("Code with exception raising: ", timeit(codeWithException, number=10000))
+print("Code without exception:      ", timeit(
+    codeWithoutException, number=10000))
+```
+
+**Note:** `pass` is a statement wich doesn't do anything and is used when we can't have an empty code block.

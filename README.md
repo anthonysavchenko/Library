@@ -14,4 +14,7 @@ Just my personal **sandbox** to take some practice and try different *technologi
 
 * Find English spell checker extension for VS Code.
 * Find extension for preview Markdown.
+* Find extension for margins.
+* Define comments format.
+* Define format for main page.
 * What is tail recursion?
