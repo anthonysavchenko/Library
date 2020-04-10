@@ -1,5 +1,7 @@
 # Grokking Algorithms. Aditya Bhargava
 
+[Errata](http://adit.io/errata.html)
+
 **Algorithm** is a set of instructions for accomplishing a task.  
 **Big O notation** is special notation that tells you how fast an algorithm is.
 
@@ -15,11 +17,11 @@
 
 ### Functions growth comparation
 
-n | log<sub>2</sub>n | n | n * log<sub>2</sub>n | n<sup>2</sup> | n!
---|------------------|---|----------------------|---------------|---
-16 | 4 | 16 | 64 | 256 | ~ 2 * 10<sup>13</sup>
-256 | 8 | 256 | 2 048 | 65 536 | ~ 8 * 10<sup>506</sup>
-1 024 | 10 | 1 024 | 10 240 | 1 048 576 | ~ 5 * 10<sup>2639</sup>
+log<sub>2</sub>n | n | n * log<sub>2</sub>n | n<sup>2</sup> | n!
+------------------|---|----------------------|---------------|---
+4 | 16 | 64 | 256 | ~ 2 * 10<sup>13</sup>
+8 | 256 | 2 048 | 65 536 | ~ 8 * 10<sup>506</sup>
+10 | 1 024 | 10 240 | 1 048 576 | ~ 5 * 10<sup>2639</sup>
 
 
 ## Binary Search
@@ -46,13 +48,14 @@ def binary_search(items, search_for):
 
 
 print(binary_search([1, 5, 6, 10, 12], 6))
+# Output: 2
 ```
 
 
 ## Arrays and Linked Lists
 
-Arrays are good at random reading.
-Linked lists are good at writing (or deleting) at the beginnig or at the end of structure and at sequential reading whole structure.
+Arrays are good at random reading (*random access*).  
+Linked lists are good at writing (or deleting) at the beginnig or at the end of structure and at sequential reading whole structure (*sequential access*).
 
 Operation | Arrays | Linked Lists
 ----------|--------|-------------
@@ -86,4 +89,25 @@ def selection_sort(items):
 
 
 print(selection_sort([5, 3, 6, 2, 10]))
+# Output: [2, 3, 5, 6, 10]
+```
+
+
+## Recursion
+
+Recursion is when function calls itself. It has advantage of clear code, but has disadvantage of low performance, when call-stack grows large and occupies a lot of memory. However any recursion can be rewritten with loops.
+
+```py
+def factorial(number):
+    # Base case.
+    if number == 1:
+        return 1
+
+    # Recursive case.
+    else:
+        return number * factorial(number - 1)
+
+
+print(factorial(5))
+# Output: 120
 ```

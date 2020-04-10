@@ -63,7 +63,8 @@ print('It\'s me!')
 # Output: It's me!
 
 print("\" \' \\ \n")
-# Output: " ' \ 
+# Output:
+# " ' \ 
 #
 
 print("Hello, world!".replace('Hello', 'Hi'))
@@ -167,7 +168,8 @@ print('eligible' if 18 <= age < 65 or regular_customer else 'not eligible')
 ```py
 for number in range(1, 10, 2):
     print(number * '.')
-# Output: .
+# Output:
+# .
 # ...
 # .....
 # .......
@@ -185,7 +187,8 @@ for char in "Hello":
 else:
     print('!')
     print('!')
-# Output: 'H'
+# Output:
+# 'H'
 # 'e'
 # 'l'
 # 'l'
@@ -202,7 +205,8 @@ num = 100
 while num > 0:
     print(num)
     num //= 2
-# Output: 100
+# Output:
+# 100
 # 50
 # 25
 # 12
@@ -839,6 +843,10 @@ if xfactor == None:
 print("Code with exception raising: ", timeit(codeWithException, number=10000))
 print("Code without exception:      ", timeit(
     codeWithoutException, number=10000))
+# Output:
+# Code with exception raising:  0.014636099999999999
+# Code without exception:       0.0062339999999999895
 ```
 
-**Note:** `pass` is a statement wich doesn't do anything and is used when we can't have an empty code block.
+**Notes:**
+- `pass` is a statement wich doesn't do anything and is used when we can't have an empty code block.
