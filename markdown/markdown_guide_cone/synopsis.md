@@ -1,6 +1,6 @@
 # Markdown language
 
-[Official documentation](https://www.markdownguide.org/)
+[Source](https://www.markdownguide.org/)
 
 Double trailing whitespaces and return  
 mean a new line

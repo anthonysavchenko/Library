@@ -2,14 +2,13 @@
 
 Just my personal **sandbox** to take some practice and try different *technologies*.
 
-[Markdown](https://github.com/anthonysavchenko/sandbox/blob/master/markdown/markdown.md)
+* Markdown
+    * [Markdown Guide. Matt Cone](https://github.com/anthonysavchenko/sandbox/blob/master/markdown/markdown_guide_cone/synopsis.md)
 
 * Algorithms and Data Structures
-
     * [Grokking Algorithms. Aditya Bhargava](https://github.com/anthonysavchenko/sandbox/blob/master/algorithms/grokking_algorithms_bhargava/synopsis.md)
 
 * Python
-
     * [The Complete Python Course. Mosh Hamedani](https://github.com/anthonysavchenko/sandbox/blob/master/python_course_hamedani/sysnopsis.md)
 
 ## Questions and future ideas
