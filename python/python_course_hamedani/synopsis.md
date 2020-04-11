@@ -1,7 +1,8 @@
 # Python
 
-Python - high-level cross-platform language.
-[Official documentation](https://www.python.org)
+[Source](https://codewithmosh.com/courses/417695)   
+
+Python - high-level cross-platform language.  
 
 
 ## VS Code extensions

@@ -2,16 +2,117 @@
 
 Just my personal **sandbox** to take some practice and try different *technologies*.
 
-* Markdown
-    * [Markdown Guide. Matt Cone](https://github.com/anthonysavchenko/sandbox/blob/master/markdown/markdown_guide_cone/synopsis.md)
+
+---
 
 * Algorithms and Data Structures
     * [Grokking Algorithms. Aditya Bhargava](https://github.com/anthonysavchenko/sandbox/blob/master/algorithms/grokking_algorithms_bhargava/synopsis.md)
-
 * Python
-    * [The Complete Python Course. Mosh Hamedani](https://github.com/anthonysavchenko/sandbox/blob/master/python_course_hamedani/sysnopsis.md)
+    * [The Complete Python Course. Mosh Hamedani](https://github.com/anthonysavchenko/sandbox/blob/master/python/python_course_hamedani/synopsis.md)
+* Markdown
+    * [Markdown Guide. Matt Cone](https://github.com/anthonysavchenko/sandbox/blob/master/markdown/markdown_guide_cone/synopsis.md)
 
-## Questions and future ideas
+---
+
+
+## Materials Research
+
+* [Roadmaps](https://roadmap.sh/)
+* Algorithms and Data Structures
+    * [CS50 Harvard Course. Plus Web Dev and Certificate. David Malan](https://www.edx.org/professional-certificate/harvardx-computer-science-for-web-programming)
+    * [CS50 Harvard Course. David Malan](https://cs50.harvard.edu)
+    * [Designing Data-Intensive Applications. Martin Kleppmann]()
+    * [Bhargava Book Review](https://medium.com/hackernoon/grokking-algorithms-book-review-aa4459da93f5)
+    * [Structure and Interpretation of Computer Program. Harold Abelson](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book.html)
+    * [MVC](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller)
+* HTML and CSS
+    * [MDN HTML Basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics)
+* Python
+    * [Python Developer Interview](https://www.youtube.com/watch?v=VFBXx7O9BxU)
+    * [Automate the Boring Stuff with Python](http://inventwithpython.com/)
+    * [Learn Python 3 The Hard Way. Zed Shaw](https://shop.learncodethehardway.org/access/buy/9/)
+    * [Learn More Python 3 the Hard Way. Zed Shaw. 1st edition. 2018](https://www.amazon.com/Learn-More-Python-Hard-Way/dp/0134123484)
+    * [Python Crash Course, 2nd Edition: A Hands-On, Project-Based Introduction to Programming](https://www.amazon.com/Python-Crash-Course-Eric-Matthes-ebook/dp/B07J4521M3/)
+    * [Serious Python: Black-Belt Advice on Deployment, Scalability, Testing, and More](https://www.amazon.com/dp/1593278780/)
+    * [Impractical Python Projects: Playful Programming Activities to Make You Smarter](https://www.amazon.com/Impractical-Python-Projects-Programming-Activities-ebook/dp/B077WZ43P2)
+    * [Certification](https://hackr.io/blog/python-certification)
+    * [Official Python Tutorial](docs.python.org)
+    * Online Courses
+	    * [Python for Everybody Specialization](coursera.org)
+	    * [Complete Python Bootcamp](udemy.com)
+	    * [The Python Bible | Everything You Need to Program in Python](udemy.com)
+    * Frameworks
+        * [Django](https://www.djangoproject.com/)
+        * Flask
+        * Bottle
+* Markdown
+    * [Extended Syntax](https://www.markdownguide.org/extended-syntax/)
+    * [GFM](https://github.github.com/gfm/)
+
+
+### Online Courses
+
+* EN
+    * [Code With Mosh](https://codewithmosh.com/)
+    * **[Pluralsight](https://www.pluralsight.com/offer/2020/free-april-month/)**
+    * [edx.org](https://www.edx.org/)
+    * [Udemy](https://www.udemy.com/)
+    * [Coursera](https://www.coursera.org/)
+    * [Stepik](https://stepik.org/)
+* RU
+    * [Loft School](https://loftschool.com/)
+    * [Otus](https://otus.ru/)
+    * [Skill Box](https://skillbox.ru/)
+    * [Geek Brains](https://geekbrains.ru/)
+
+
+### 🔨 Practice
+
+* [Leetcode](https://leetcode.com/)
+* [Hackerrank](https://www.hackerrank.com/)
+* [Codewars](https://www.codewars.com/)
+
+
+## Curriculum
+
+* Algorithms and Data Structures
+    * Design Patterns
+* Web Development
+    * HTTP, HTTPS, SSL
+    * Frontend
+        * HTML and CSS
+        * JavaScript
+            * React
+            * Redux
+            * Angular
+            * Vue
+    * Backend
+        * Python
+        * Java
+        * Go
+        * DataBases
+            * SQL
+            * noSQL
+* Mobile Development
+    * Swift
+    * Kotlin
+* Enterprise Delelopment
+    * C#
+* System and Game Development
+    * C / C++
+    * Rust
+* Software Development Process
+    * Agile / Scrum
+* Testing
+    * Unit Testing
+* git
+    * SSH
+* Linux / macOS
+* Docker
+* Markdown
+
+
+## Questions and ideas
 
 * Find English spell checker extension for VS Code.
 * Find extension for preview Markdown.
@@ -19,3 +120,8 @@ Just my personal **sandbox** to take some practice and try different *technologi
 * Define comments format.
 * Define format for main page.
 * What is tail recursion?
+* Change repository name (Syllabus, Curriculum).
+* What is CI / CD exactly?
+
+
+Theory / Practice / Community / Certification / CV / Job ads
