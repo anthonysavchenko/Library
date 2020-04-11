@@ -40,7 +40,7 @@ Just my personal **sandbox** to take some practice and try different *technologi
     * Online Courses
 	    * [Python for Everybody Specialization](coursera.org)
 	    * [Complete Python Bootcamp](udemy.com)
-	    * [The Python Bible | Everything You Need to Program in Python](udemy.com)
+	    * [The Python Bible. Everything You Need to Program in Python](udemy.com)
     * Frameworks
         * [Django](https://www.djangoproject.com/)
         * Flask
