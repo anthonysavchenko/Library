@@ -2,22 +2,28 @@
 
 [Source](https://codewithmosh.com/courses/417695)   
 
-Python - high-level cross-platform language.  
+> **IMPORTANT TERMINOLOGY**
+> DRY - Don't Repeat Yourself.
+> Duck Typing - dynamically typed language definition (if it walks like a duck and quacks like a duck, it is a duck.).
+
+## Getting Started
+
+Python - high-level cross-platform dynamic language.  
 
 
-## VS Code extensions
+### VS Code extensions
 
 * Python - Linting (pylint), Debugging, Formatting (autopep8).
 * Code Runner - Runs code in terminal (Ctrl + Alt + N).
 
 
-## Interpretation
+### Interpretation
 
 * CPython (C, default): Python program - CPython - Python Bytecode - Python Virtual Machine - Machine Code.
 * IronPython (C#): Python program (with C# code) - IronPython - C# Bytecode - C# Virtual Machine - Machine Code.
 
 
-## Types
+## Primitive Types
 
 ```py
 # Numbers:
@@ -40,7 +46,7 @@ greeting = "Hello, world!"
 ```
 
 
-## Strings
+### Strings
 
 ```py
 greeting = "   hello, world!"
@@ -85,7 +91,7 @@ print('*' * 10)
 ```
 
 
-## Math
+### Numbers
 
 ```py
 dec = 10
@@ -124,7 +130,7 @@ print(math.ceil(3.1415))
 ```
 
 
-## Falsy values:
+### Falsy values
 
 * `''`
 * `""`
@@ -133,7 +139,10 @@ print(math.ceil(3.1415))
 * `[]`
 
 
-## If
+## Control Flow
+
+
+### If
 
 ```py
 age = 22
@@ -160,11 +169,11 @@ print('eligible' if 18 <= age < 65 or regular_customer else 'not eligible')
 # Output: eligible
 ```
 
-**Notes:**
-- `18 <= age < 65` - chaining comparison.
+> **NOTES**
+> - `18 <= age < 65` - chaining comparison.
 
 
-## For
+### For
 
 ```py
 for number in range(1, 10, 2):
@@ -199,7 +208,7 @@ else:
 ```
 
 
-## While
+### While
 
 ```py
 num = 100
@@ -228,9 +237,9 @@ print(get_greeting("John", "Smith", number=5))
 # Output: 5. Hello, John Smith!
 ```
 
-**Notes:**
-- `first_name` and `last_name` are parameters, `"John"` and `"Smith"` are arguments.
-- All functions return `None` value by default.
+> **NOTES**
+> - `first_name` and `last_name` are parameters, `"John"` and `"Smith"` are arguments.
+> - All functions return `None` value by default.
 
 
 ### Tuple packing parameters
@@ -290,7 +299,10 @@ print(message)
 ```
 
 
-## Lists
+## Data Structures
+
+
+### Lists
 
 ```py
 letters = ['a', 'b', 'c']
@@ -460,7 +472,7 @@ print(sorted(numbers, reverse=True))
 ```
 
 
-#### Sorting Complex Items
+### Sorting Complex Items
 
 ```py
 items = [
@@ -481,7 +493,7 @@ print(items)
 ```
 
 
-## Lambda Functions, Map, Filter, Zip Functions and List Comprehension
+### Lambda Functions, Map, Filter, Zip Functions and List Comprehension
 
 ```py
 items = [
@@ -536,7 +548,7 @@ print(list(zip(items, "Hello", range(10), items)))
 ```
 
 
-## Stack and Queue
+### Stack and Queue
 
 Stack - **LIFO** - **L**ast **I**n - **F**irst **O**ut
 Use simple array `[1, 2, 3]`. Methods: `append(4)`, `pop()`. Top of the stack: `[-1]`.
@@ -545,7 +557,7 @@ Queue - **FIFO** - **F**irst **I**n - **F**irst **O**ut
 Use class: `deque([1, 2, 3])`, Methods: `append(4)`, `popleft()`.
 
 
-## Tuple
+### Tuple
 
 Tuples is a read only list, no methods to append, modify or remove items. *Immutable* type.
 
@@ -608,13 +620,13 @@ print(x, y)
 ```
 
 
-## Array
+### Array
 
 Array performs faster than ordinary list on large ammount of items.
 Use class `array("i", [1, 2, 3])`. Methods: `append(4)`, `insert(5, 3)`, `pop()`, `remove(2)`
 
 
-## Set
+### Set
 
 Set is a collection of items with no duplicates.
 
@@ -655,7 +667,7 @@ print({x * 2 for x in range(5)})
 ```
 
 
-## Dictionary
+### Dictionary
 
 Dictionary is a collection of key value pairs.
 
@@ -706,7 +718,7 @@ print(values)
 ```
 
 
-## Generator object
+### Generator object
 
 Generator object doesn't store items in the memory, it generats them when it's necessary.
 
@@ -731,7 +743,7 @@ print("List:", getsizeof(values), "bytes")
 ```
 
 
-## Unpacking operator
+### Unpacking operator
 
 ```py
 numbers = [1, 2, 3]
@@ -747,7 +759,7 @@ print(list(range(5)))
 print([*range(5)])
 # Output: [0, 1, 2, 3, 4]
 
-print({*range(5), *"Hello"})
+print([*range(5), *"Hello"])
 # Output: [0, 1, 2, 3, 4, 'H', 'e', 'l', 'l', 'o']
 
 print({*range(5), *"Hello"})
@@ -849,5 +861,417 @@ print("Code without exception:      ", timeit(
 # Code without exception:       0.0062339999999999895
 ```
 
-**Notes:**
-- `pass` is a statement wich doesn't do anything and is used when we can't have an empty code block.
+> **NOTES**
+> - `pass` is a statement wich doesn't do anything and is used when we can't have an empty code block.
+
+
+## Classes
+
+```py
+# Pascal naming convensions.
+class Point:
+    # Class attribute.
+    default_color = "red"
+
+    # In every method must be at least one parameter - self.
+    def draw(self):
+        # x, y - instance attributes.
+        print(f"Point ({self.x}, {self.y})")
+
+    # Constructor. And one of the Magic Methods in Python class.
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    # Class method.
+    @classmethod
+    def zero(cls):
+        return cls(0, 0)
+
+    # Magic Method is method with double underscore at the begining and end of
+    # the name and wich is called automatically by Python interpreter
+    # depending on how we use our objects or classes.
+    def __str__(self):
+        return f"({self.x}, {self.y})"
+
+    # Equal.
+    def __eq__(self, other):
+        return self.x == other.x and self.y == other.y
+
+    # Greater Than.
+    # Python interpreter will use it for Less Than.
+    def __gt__(self, other):
+        return self.x > other.x and self.y > other.y
+
+    # Addition.
+    def __add__(self, other):
+        return Point(self.x + other.x, self.y + other.y)
+
+
+point = Point(1, 2)
+print(type(point))
+# Output: <class '__main__.Point'>
+# NOTE: __main__ is a name of the module, where class Point is defined.
+
+print(isinstance(point, Point))
+# Output: True
+
+# Objects in Python are dynamic. Similar to JavaScript.
+# So we can define attributes whenever we need them.
+point.z = 10
+
+point.draw()
+# Output: Point (1, 2)
+
+print(Point.default_color)
+print(point.default_color)
+Point.default_color = "yellow"
+print(Point.default_color)
+print(point.default_color)
+# Output:
+# red
+# red
+# yellow
+# yellow
+
+# Factory method - creates new object. Demonstration of class methods.
+point = Point.zero()
+point.draw()
+# Output: Point (0, 0)
+
+print(point)
+# Output: (0, 0)
+
+print(point == Point(0, 0))
+print(point > Point(1, 1))
+print(point < Point(1, 1))
+print(Point(2, 3) + Point(1, 1))
+# Output:
+# True
+# False
+# True
+# (3, 4)
+```
+
+> **NOTES**
+> - [A Guide To Python's Magic Methods](https://rszalski.github.io/magicmethods/)
+
+
+### Making Custom Containers
+
+```py
+class TagCloud:
+    def __init__(self):
+        # Use double underscore to make attribute private.
+        self.__tags = {}
+
+    def print(self):
+        print(self.__tags)
+
+    def add(self, tag):
+        self.__tags[tag.lower()] = self.__tags.get(tag.lower(), 0) + 1
+
+    def __getitem__(self, tag):
+        self.__tags.get(tag.lower(), 0)
+
+    def __setitem__(self, tag, count):
+        self.__tags[tag.lower()] = count
+
+    def __len__(self):
+        return len(self.__tags)
+
+    def __iter__(self):
+        return iter(self.__tags.items())
+
+
+cloud = TagCloud()
+cloud["python"] = 10
+cloud.add("python")
+cloud.add("python")
+cloud.add("Python")
+cloud.print()
+print(len(cloud))
+for tag, count in cloud:
+    print(tag, count)
+# Output:
+# {'python': 13}
+# 1
+# python 13
+```
+
+
+### Properties
+
+**Without decorators**
+
+```py
+class Product:
+    def __init__(self, price):
+        # Or self.price = price
+        self.__set_price(price)
+
+    def __get_price(self):
+        return self.__price
+
+    def __set_price(self, price):
+        if price < 0:
+            raise ValueError("Price cannot be negative")
+        self.__price = price
+
+    price = property(__get_price, __set_price)
+
+
+product = Product(10)
+print(product.price)
+# Output: 10
+```
+
+**With decorators**
+
+```py
+class Product:
+    def __init__(self, price):
+        self.price = price
+
+    @property
+    def price(self):
+        return self.__price
+
+    @price.setter
+    def price(self, price):
+        if price < 0:
+            raise ValueError("Price cannot be negative")
+        self.__price = price
+
+
+product = Product(10)
+print(product.price)
+# Output: 10
+```
+
+
+### Inheritance and Polymorphism
+
+```py
+# Base or Parent class.
+class Animal:
+    def __init__(self):
+        # Attributes will be inhereted in Child Classes.
+        self.age = 2
+
+    # Method will be inhereted in Child Classes.
+    def eat(self):
+        print("eat")
+
+
+# Sub or Child class.
+class Mammal(Animal):
+    def __init__(self):
+        # Used to refer to Base class.
+        super().__init__()
+        self.weight = 10
+
+    def walk(self):
+        print("walk")
+
+
+class Fish(Animal):
+    def swim(self):
+        print("swim")
+
+
+m = Mammal()
+m.eat()
+# Output: eat
+
+print(m.age, m.weight)
+# Output: 2, 10
+
+
+print(isinstance(m, Mammal))
+# Output: True
+
+print(isinstance(m, Animal))
+# Output: True
+
+# All classes are inhereted from class object.
+print(isinstance(m, object))
+# Output: True
+
+
+print(issubclass(Mammal, Animal))
+# Output: True
+
+print(issubclass(Mammal, object))
+# Output: True
+```
+
+```py
+# Be careful with multi-level inheritance.
+# Don't make too many unnecessary levels.
+#
+# Be careful with multiple inheritance.
+# Don't do this with classes wich have something in common.
+# Multiple inheritance can be done like this:
+# class ChildClass(BaseClass1, BaseClass2, BaseClass3)
+#
+# Here is a good example of inheritance.
+
+from abc import ABC, abstractmethod
+
+
+class InvalidOperationError(Exception):
+    pass
+
+
+# ABC class is used to make Stream class abstract. ABC = Abstract Base Class.
+class Stream(ABC):
+    def __init__(self):
+        self.opened = False
+
+    def open(self):
+        if self.opened:
+            raise InvalidOperationError("Stream is already open.")
+        self.opened = True
+
+    def close(self):
+        if not self.opened:
+            raise InvalidOperationError("Stream is already closed.")
+        self.opened = False
+
+    @abstractmethod
+    def read(self):
+        pass
+
+
+class FileStream(Stream):
+    def read(self):
+        print("Reading data from a file...")
+
+
+class NetworkStream(Stream):
+    def read(self):
+        print("Reading data from a network...")
+
+
+class MemoryStream(Stream):
+    def read(self):
+        print("Reading data from a memory...")
+
+
+def read_data(stream):
+    stream.open()
+    # Polymorphism - specific reaction on the same function call by 
+    # different objects connected with inheritance.
+    #
+    # Or. In other words.
+    #
+    # Polymorphism - the provision of a single interface
+    # to entities of different types.
+    #
+    # Duck Typing can be used here. There is no need to have Stream class.
+    stream.read()
+    stream.close()
+
+
+read_data(MemoryStream())
+# Output: Reading data from a memory...
+```
+
+> **NOTES**
+> Duck Typing - if it walks like a duck and quacks like a duck, it is a duck.
+>
+> Because Python is a dynamically typed language it doesn't check the type of objects. It only looks for the existence of certain methods in objects.
+>
+> So to achive polymorphic behavior it doesn't need base class. However having this base class is a good practice because of explicit common interface.
+
+
+### Data classes
+
+```py
+from collections import namedtuple
+
+Point = namedtuple('Point', ['x', 'y'])
+p1 = Point(x=1, y=2)
+p2 = Point(1, 2)
+print(p1 == p2, p1.x)
+# Output: True 1
+```
+
+
+## Modules and Packages
+
+**Module** is a file that contains some Python code (functions, classes, variables, etc.).  
+Every module have predefined attribures, like `__name__` - a name the module. The name of the module that starts our program is always `__main__`.
+
+**Package** is a container (folder) for one or more modules.  
+To make a package from directory it needs to put an empty file there called `__init.py`. This file may contain any initialization code.  
+
+```py
+# Import code from packages (folders) and modules (files) syntax.
+import folder_name.file_name
+
+folder_name.file_name.function1()
+folder_name.file_name.function2()
+
+
+# Or.
+from folder_name.file_name import function1, function2
+
+function1()
+function2()
+
+
+# Or even.
+from folder_name import file_name
+
+file_name.function1()
+file_name.function2()
+
+
+# Package can contain any Sub-packages.
+# Absolute import statement. Recomended.
+from top_level_package.some_sub_package import some_module
+
+some_module.function()
+
+
+# Relative import statement.
+# . means the current package.
+# .. means one level up - package where current package is located.
+from ..some_sub_package import some module
+
+some_module.function()
+```
+
+### Module Search Path and `dir` Function
+
+```py
+from sys import path
+
+# Path where Python is looking for modules to import.
+print(path)
+# Output:
+# ['d:\\Code\\sandbox',
+# 'C:\\Users\\anton\\AppData\\Local\\Programs\\Python\\Python38-32\\python38.zip',
+# 'C:\\Users\\anton\\AppData\\Local\\Programs\\Python\\Python38-32\\DLLs',
+# 'C:\\Users\\anton\\AppData\\Local\\Programs\\Python\\Python38-32\\lib',
+# 'C:\\Users\\anton\\AppData\\Local\\Programs\\Python\\Python38-32',
+# 'C:\\Users\\anton\\AppData\\Roaming\\Python\\Python38\\site-packages',
+# 'C:\\Users\\anton\\AppData\\Local\\Programs\\Python\\Python38-32\\lib\\site-packages']
+
+# List of attributes and methods in an object (e.g imported module).
+print(dir(path))
+# ['__add__', '__class__', '__contains__', '__delattr__', '__delitem__',
+# '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__',
+# '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__',
+# '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__',
+# '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__',
+# '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__',
+# '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count',
+# 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+```
+
+
+## Python Standart Library
+

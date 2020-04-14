@@ -88,6 +88,12 @@ Just my personal **sandbox** to take some practice and try different *technologi
             * Vue
     * Backend
         * Python
+            * Backend Web/Mobile Development
+            * Web Scriping
+            * ~~Data Science/Machine Learning/Artificial Inteligence~~
+            * Algorithms studing
+            * Leetcode/Hackerrank/Codewars practice
+            * Intermediate/Advanced Python
         * Java
         * Go
         * DataBases
@@ -110,6 +116,12 @@ Just my personal **sandbox** to take some practice and try different *technologi
 * Linux / macOS
 * Docker
 * Markdown
+
+
+## VS Studio
+
+* Open tab in a new window `Ctrl` + `K`, `O`
+* Select all occurrences of highlight `Ctrl` + `Shift` + `L`
 
 
 ## Questions and ideas
