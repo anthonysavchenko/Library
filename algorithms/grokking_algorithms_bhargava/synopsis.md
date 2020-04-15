@@ -2,11 +2,14 @@
 
 [Errata](http://adit.io/errata.html)
 
+
+## Introduction to algorithms
+
 **Algorithm** is a set of instructions for accomplishing a task.  
 **Big O notation** is special notation that tells you how fast an algorithm is.
 
 
-## Common Big O run times
+### Common Big O run times
 
 - O(log<sub>2</sub>n) - logarithmic time, binary search.
 - O(n) - linear time, simple search.
@@ -24,7 +27,7 @@ log<sub>2</sub>n | n | n * log<sub>2</sub>n | n<sup>2</sup> | n!
 10 | 1 024 | 10 240 | 1 048 576 | ~ 5 * 10<sup>2639</sup>
 
 
-## Binary Search
+### Binary Search
 
 O(log<sub>2</sub>n)
 
@@ -52,7 +55,10 @@ print(binary_search([1, 5, 6, 10, 12], 6))
 ```
 
 
-## Arrays and Linked Lists
+## Selection sort
+
+
+### Arrays and Linked Lists
 
 Arrays are good at random reading (*random access*).  
 Linked lists are good at writing (or deleting) at the beginnig or at the end of structure and at sequential reading whole structure (*sequential access*).
@@ -64,7 +70,7 @@ Insertion | O(n) | O(1)
 Deletion | O(n) | O(1)
 
 
-## Selection sort
+### Selection sort
 
 O(n<sup>2</sup>)
 
@@ -110,4 +116,30 @@ def factorial(number):
 
 print(factorial(5))
 # Output: 120
+```
+
+
+## Quick Sort
+
+**Divid-and-conquer (D&C)** is a general recursive technique for solving problems. It works by breaking a problem down into smaller and smaller pieces.
+
+**Inductive proof** is way to prove that algorithm works. It has two streps: the base case and the inductive case. Like recursion.
+
+Constants in Big O notation can matter sometimes. That's why quicksort is faster than merge sort.
+
+O(n * log<sub>2</sub>n) in best and average case, but O(n<sup>2</sup>) in worth case.
+
+```py
+def quick_sort(items):
+    if len(items) < 2:
+        return items
+    else:
+        pivot = items[len(items) // 2]
+        less = [i for i in items[1:] if i <= pivot]
+        greater = [i for i in items[1:] if i > pivot]
+        return quick_sort(less) + [pivot] + quick_sort(greater)
+
+
+print(quick_sort([1, 4, 19, 12, 8]))
+# Output: [1, 4, 8, 12, 19]
 ```
