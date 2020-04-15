@@ -29,6 +29,7 @@ Just my personal **sandbox** to take some practice and try different *technologi
     * [MDN HTML Basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics)
 * Python
     * [Python Developer Interview](https://www.youtube.com/watch?v=VFBXx7O9BxU)
+    * C/C# exrtensions, speed of Python
     * [Automate the Boring Stuff with Python](http://inventwithpython.com/)
     * [Learn Python 3 The Hard Way. Zed Shaw](https://shop.learncodethehardway.org/access/buy/9/)
     * [Learn More Python 3 the Hard Way. Zed Shaw. 1st edition. 2018](https://www.amazon.com/Learn-More-Python-Hard-Way/dp/0134123484)
@@ -134,6 +135,8 @@ Just my personal **sandbox** to take some practice and try different *technologi
 * What is tail recursion?
 * Change repository name (Syllabus, Curriculum).
 * What is CI / CD exactly?
-
+* Python: What is a real example of binary file? Excercise to work with binary files.
+* Python: What are under the hood realizations of tuples and lists in Python (arrays, linked lists)?
+* Algorithms: Merge sort.
 
 Theory / Practice / Community / Certification / CV / Job ads

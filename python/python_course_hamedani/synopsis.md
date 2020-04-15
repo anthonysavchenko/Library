@@ -1179,6 +1179,7 @@ read_data(MemoryStream())
 ```
 
 > **NOTES**
+>
 > Duck Typing - if it walks like a duck and quacks like a duck, it is a duck.
 >
 > Because Python is a dynamically typed language it doesn't check the type of objects. It only looks for the existence of certain methods in objects.
@@ -1205,7 +1206,7 @@ print(p1 == p2, p1.x)
 Every module have predefined attribures, like `__name__` - a name the module. The name of the module that starts our program is always `__main__`.
 
 **Package** is a container (folder) for one or more modules.  
-To make a package from directory it needs to put an empty file there called `__init.py`. This file may contain any initialization code.  
+To make a package from directory it needs to put an empty file there called `__init__.py`. This file may contain any initialization code.  
 
 ```py
 # Import code from packages (folders) and modules (files) syntax.
@@ -1275,3 +1276,208 @@ print(dir(path))
 
 ## Python Standart Library
 
+
+### Working with Path
+
+```py
+from pathlib import Path
+
+
+# Absolute path. Raw string.
+Path(r"C:\Program Files\Microsoft")
+
+# Current folder.
+Path()
+
+# Related path.
+Path("Folder\\__init__.py")
+
+# Combining.
+Path() / Path("Folder") / "__init__.py"
+
+# Home directory of the current user.
+Path.home()
+
+path = Path(r"C:\app.py")
+path.exists()
+path.is_file()
+path.is_dir()
+
+print(path.name)
+# Output: app.py
+
+print(path.stem)
+# Output: app
+
+print(path.suffix)
+# Output: .py
+
+print(path.parent)
+# Output: C:\
+
+print(path.with_name("file.txt"))
+# Output: C:\file.txt
+
+print(path.with_suffix(".txt"))
+# Output: C:\app.txt
+
+print(path.absolute())
+# Output: C:\app.py
+
+```
+
+
+### Working with Directories
+
+```py
+from pathlib import Path
+
+
+path = Path(r"C:\directory")
+path.exists()
+path.mkdir()
+path.rmdir()
+path.rename(r"C:\dir")
+
+print([item for item in Path("C:\\").iterdir() if item.is_file()])
+# Output:
+# [WindowsPath('C:/hiberfil.sys'),
+# WindowsPath('C:/ngrok.exe'),
+# WindowsPath('C:/pagefile.sys'),
+# WindowsPath('C:/swapfile.sys')]
+
+print([file for file in Path("C:\\").glob("*.exe")])
+# Output: [WindowsPath('C:/ngrok.exe')]
+
+# Search recursively.
+print([file for file in Path("C:\\").glob("**/*.py")])
+
+# Or use rglob().
+print([file for file in Path("C:\\").rglob("*.py")])
+```
+
+
+### Working with Files
+
+```py
+from pathlib import Path
+from time import ctime
+import shutil
+
+path = Path(r"C:\directory\file.txt")
+path.exists()
+path.rename(r"C:\directory\init.txt")
+
+# Delete file (not move to Recycle Bin).
+path.unlink()
+
+# File status. Creation time.
+print(ctime(path.stat().st_ctime))
+# Output: Wed Apr 15 09:47:32 2020
+
+
+# Read and write to binary file.
+path.write_bytes()
+path.read_bytes()
+
+# Read and write to text file.
+path.write_text("Hello, world!")
+print(path.read_text())
+# Output: Hello, world!
+
+
+# Copy file.
+source = Path(r"C:\directory\file.txt")
+target = Path() / "init.txt"
+
+target.write_text(source.read_text())
+
+# Or using Shell Util.
+shutil.copy(source, target)
+```
+
+
+### Working with Zip Files
+
+```py
+from pathlib import Path
+from zipfile import ZipFile
+
+# Write to Zip file.
+with ZipFile(Path("files.zip"), "w") as zip:
+    for path in Path().rglob('*.*'):
+        zip.write(path)
+        print(path)
+
+# Read from Zip file.
+with ZipFile(Path("files.zip")) as zip:
+    print(zip.namelist())
+    info = zip.getinfo(zip.namelist()[-1])
+    print(info.file_size)
+    print(info.compress_size)
+    zip.extractall("extract")
+```
+
+
+### Working with CSV Files
+
+**CSV** - Comma Separated Value.
+
+```py
+import csv
+
+with open("data.csv", "w") as file:
+    writer = csv.writer(file)
+    writer.writerow(["transaction_id", "product_id", "price"])
+    writer.writerow([1000, 1, 5])
+    writer.writerow([1001, 2, 15])
+
+with open("data.csv") as file:
+    reader = csv.reader(file)
+    print(list(reader))
+# Output: [['transaction_id', 'product_id', 'price'],
+# [],
+# ['1000', '1', '5'],
+# [],
+# ['1001', '2', '15'],
+# []]
+
+with open("data.csv") as file:
+    reader = csv.reader(file)
+    for row in reader:
+        print(row)
+# Output: ['transaction_id', 'product_id', 'price']
+# []
+# ['1000', '1', '5']
+# []
+# ['1001', '2', '15']
+# []
+```
+
+
+### Working with JSON Files
+
+```py
+import json
+from pathlib import Path
+
+movies = [
+    {"id": 1, "title": "Terminator", "year": 1989},
+    {"id": 2, "title": "Kindergarten Cop", "year": 1990}
+]
+
+data_to_write = json.dumps(movies)
+print(data_to_write)
+# Output:
+# [{"id": 1, "title": "Terminator", "year": 1989},
+# {"id": 2, "title": "Kindergarten Cop", "year": 1990}]
+
+# Write to file.
+Path("movies.json").write_text(data_to_write)
+
+# Read from file.
+raed_data = Path("movies.json").read_text()
+raed_json = json.loads(raed_data)
+print(raed_json[0]["title"])
+# Output: Terminator
+```
