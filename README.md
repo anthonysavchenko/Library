@@ -99,6 +99,7 @@ Just my personal **sandbox** to take some practice and try different *technologi
         * Go
         * DataBases
             * SQL
+                * SQLite
             * noSQL
 * Mobile Development
     * Swift
@@ -137,6 +138,7 @@ Just my personal **sandbox** to take some practice and try different *technologi
 * What is CI / CD exactly?
 * Python: What is a real example of binary file? Excercise to work with binary files.
 * Python: What are under the hood realizations of tuples and lists in Python (arrays, linked lists)?
+* Python: Running External Programs on Windows.
 * Algorithms: Merge sort.
 
 Theory / Practice / Community / Certification / CV / Job ads

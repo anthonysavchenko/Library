@@ -1403,11 +1403,13 @@ shutil.copy(source, target)
 from pathlib import Path
 from zipfile import ZipFile
 
+
 # Write to Zip file.
 with ZipFile(Path("files.zip"), "w") as zip:
     for path in Path().rglob('*.*'):
         zip.write(path)
         print(path)
+
 
 # Read from Zip file.
 with ZipFile(Path("files.zip")) as zip:
@@ -1426,22 +1428,16 @@ with ZipFile(Path("files.zip")) as zip:
 ```py
 import csv
 
+
+# Write to file.
 with open("data.csv", "w") as file:
     writer = csv.writer(file)
     writer.writerow(["transaction_id", "product_id", "price"])
     writer.writerow([1000, 1, 5])
     writer.writerow([1001, 2, 15])
 
-with open("data.csv") as file:
-    reader = csv.reader(file)
-    print(list(reader))
-# Output: [['transaction_id', 'product_id', 'price'],
-# [],
-# ['1000', '1', '5'],
-# [],
-# ['1001', '2', '15'],
-# []]
 
+# Read from file.
 with open("data.csv") as file:
     reader = csv.reader(file)
     for row in reader:
@@ -1452,6 +1448,15 @@ with open("data.csv") as file:
 # []
 # ['1001', '2', '15']
 # []
+
+    # Or read them all as list.
+    # print(list(reader))
+# Output: [['transaction_id', 'product_id', 'price'],
+# [],
+# ['1000', '1', '5'],
+# [],
+# ['1001', '2', '15'],
+# []]
 ```
 
 
@@ -1466,18 +1471,268 @@ movies = [
     {"id": 2, "title": "Kindergarten Cop", "year": 1990}
 ]
 
-data_to_write = json.dumps(movies)
-print(data_to_write)
-# Output:
-# [{"id": 1, "title": "Terminator", "year": 1989},
-# {"id": 2, "title": "Kindergarten Cop", "year": 1990}]
 
 # Write to file.
+data_to_write = json.dumps(movies)
 Path("movies.json").write_text(data_to_write)
 
+
 # Read from file.
-raed_data = Path("movies.json").read_text()
-raed_json = json.loads(raed_data)
-print(raed_json[0]["title"])
+read_data = Path("movies.json").read_text()
+read_json = json.loads(read_data)
+print(read_json[0]["title"])
 # Output: Terminator
 ```
+
+
+### Working with SQLite Database
+
+```py
+import sqlite3
+import json
+from pathlib import Path
+
+movies = [
+    {"id": 1, "title": "Terminator", "year": 1989},
+    {"id": 2, "title": "Kindergarten Cop", "year": 1990}
+]
+
+
+# Write to database.
+with sqlite3.connect("db.sqlite3") as connection:
+    command = "INSERT INTO Movies VALUES(?, ?, ?)"
+    for movie in movies:
+        connection.execute(command, tuple(movie.values()))
+    connection.commit()
+
+
+# Read from database.
+with sqlite3.connect("db.sqlite3") as connection:
+    command = "SELECT * FROM Movies"
+    cursor = connection.execute(command)
+    for movie in cursor:
+        print(movie)
+# Output:
+# (1, 'Terminator', 1989)
+# (2, 'Kindergarten Cop', 1990)
+
+    # Or get them all as list.
+    # print(cursor.fetchall())
+# Output: [(1, 'Terminator', 1989), (2, 'Kindergarten Cop', 1990)]
+```
+
+### Working with TimeStamps, DateTimes and TimeDeltas
+
+```py
+import time
+from datetime import datetime
+
+
+# Floating point number wich represents the number of seconds from the "begining of time".
+print(time.time())
+# Output: 1587006030.7655365
+
+
+print(datetime(2020, 4, 16, 12, 41, 30))
+# Output: 2020-04-16 12:41:30
+
+print(datetime.now())
+# Output: 2020-04-16 12:45:37.684226
+
+
+# Format strings.
+# %d - Day decimal number.
+# %b - Month full name.
+# %m - Month decimal number.
+# %y - Year two digits.
+# %Y - Yeat four digits.
+# %H - Hour 24-hour clock.
+# %I - Hour 12-hour clock.
+# %p - am/pm.
+# %M - Minutes.
+# %S - Seconds.
+
+print(datetime.strptime("2020/16/04 12:33:00 AM", "%Y/%d/%m %I:%M:%S %p"))
+# Output: 2020-04-16 00:33:00
+
+print(datetime.now().strftime("%Y/%d/%m %I:%M:%S %p"))
+# Output: 2020/16/04 01:01:56 PM
+
+
+# Convering from time to datetime.
+print(datetime.fromtimestamp(time.time()))
+# Output: 2020-04-16 13:01:56.921769
+```
+
+```py
+from datetime import datetime, timedelta
+
+
+dt1 = datetime(2018, 1, 1) + timedelta(days=1, seconds=1000)
+print(dt1)
+# Output: 2018-01-02 00:16:40
+
+dt2 = datetime.now()
+duration = dt2 - dt1
+print(duration)
+# Output: 835 days, 13:03:43.007117
+
+print("days:", duration.days, "+ seconds:", duration.seconds,
+      "= total seconds:", duration.total_seconds())
+# Output: days: 835 + seconds: 47023 = total seconds: 72191023.007117
+```
+
+
+### Random values
+
+```py
+import random
+import string
+
+
+# Random float from 0 to 1.
+print(random.random())
+# Output: 0.9141889887876429
+
+# Random int from 1 to 10.
+print(random.randint(1, 10))
+# Output: 2
+
+# Random item from list.
+print(random.choice([1, 2, 3, 4]))
+# Output: 4
+
+# Random items from list.
+print(random.choices([1, 2, 3, 4], k=2))
+# Output: [2, 4]
+
+# Random password.
+print("".join(random.choices(string.ascii_letters + string.digits, k=10)))
+# Output: aa1N5A7n3u
+
+# Shuffling array.
+numbers = [1, 2, 3, 4]
+random.shuffle(numbers)
+print(numbers)
+# Output: [2, 1, 3, 4]
+```
+
+### Browser and Emails
+
+```py
+import webbrowser
+
+webbrowser.open("http://google.com")
+webbrowser.open_new_tab("http://google.com")
+```
+
+```py
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.mime.image import MIMEImage
+from smtplib import SMTP
+from pathlib import Path
+from string import Template
+
+# In file template.html we use $name.
+template = Template(Path("template.html").read_text())
+body = template.substitute({"name": "Anton"})
+
+# Or the same.
+# body = template.substitute(name="Anton")
+
+# MIME - Multipurpose Internet Mail Extensions
+message = MIMEMultipart()
+message["from"] = "Anton Savchenko"
+message["to"] = "anton.savchenko@mail.ru"
+message["subject"] = "This is a test"
+
+# Body may be a text or HTML.
+message.attach(MIMEText(body, "html"))
+message.attach(MIMEImage(Path("image.jpg").read_bytes()))
+
+with SMTP(host="smtp.gmail.com", port=587) as smtp:
+    # Hello message to SMTP-server
+    smtp.ehlo()
+
+    # TLS - Transport Layer Security.
+    smtp.starttls()
+
+    # In order to use this sign in code feature
+    # "Allow less secure apps" should be ON in Google Account
+    # https://myaccount.google.com/lesssecureapps
+    smtp.login("anthony.savchenko@gmail.com", "password")
+    smtp.send_message(message)
+    print("Sent...")
+# Output: Sent...
+```
+
+
+### Command-line arguments
+
+```py
+import sys
+import string
+
+if len(sys.argv) < 2:
+    print("USAGE: python3 app.py message")
+else:
+    print("That's what you said after 'app.py': " + ", ".join(sys.argv[1:]))
+```
+
+
+### Run External Programs
+
+```py
+import subprocess
+
+# Old school methods.
+# subprocess.Popen()
+# subprocess.call()
+# subprocess.check_call()
+# subprocess.check_output()
+
+# Start OS command with parameters.
+# NOTE: Still have questions how execute commands like 'dir' on Windows.
+completed = subprocess.run(['python', '--version'],
+                           capture_output=True,
+                           text=True)
+
+print("args:", completed.args)
+print("returncode:", completed.returncode)
+print("stderr:", completed.stderr)
+print("stdout:", completed.stdout)
+# Output:
+# args: ['python', '--version']
+# returncode: 0
+# stderr: 
+#stdout: Python 3.8.2
+
+
+# Or start another Python script.
+# Starts different process. It won't share variables and memory.
+completed = subprocess.run(['python', 'other.py'],
+                           capture_output=True,
+                           text=True)
+
+print("args:", completed.args)
+print("returncode:", completed.returncode)
+print("stderr:", completed.stderr)
+print("stdout:", completed.stdout)
+# Output :
+# args: ['python', 'other.py']
+# returncode: 0
+# stderr: 
+# stdout: Here it is.
+
+
+# Or riise an CalledProcessError exception in case returncode is not 0.
+# completed = subprocess.run(['python', 'other.py'],
+#                            capture_output=True,
+#                            text=True,
+#                            check=True)
+```
+
+
+## Python Package Index
+
