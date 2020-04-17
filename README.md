@@ -133,12 +133,16 @@ Just my personal **sandbox** to take some practice and try different *technologi
 * Find extension for margins.
 * Define comments format.
 * Define format for main page.
-* What is tail recursion?
 * Change repository name (Syllabus, Curriculum).
 * What is CI / CD exactly?
 * Python: What is a real example of binary file? Excercise to work with binary files.
 * Python: What are under the hood realizations of tuples and lists in Python (arrays, linked lists)?
 * Python: Running External Programs on Windows.
-* Algorithms: Merge sort.
+* Algorithms: What is tail recursion?
+* Algorithms: What is Merge sort?
+* Algorithms: How is dictionary created as hash table and how does it grow in Python?
+* Algorithms: How do other types realized in Python?
+* Algorithms: What are other collections in Python (deque, ...)?
+* Algorithms: Try to add pictures using tablet and pen.
 
 Theory / Practice / Community / Certification / CV / Job ads
