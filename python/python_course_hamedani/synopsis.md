@@ -6,6 +6,10 @@
 > DRY - Don't Repeat Yourself.
 > Duck Typing - dynamically typed language definition (if it walks like a duck and quacks like a duck, it is a duck.).
 
+
+> **FURTHER READING**
+> [Selenium and Python](https://selenium-python.readthedocs.io/)
+
 ## Getting Started
 
 Python - high-level cross-platform dynamic language.  
@@ -1734,5 +1738,394 @@ print("stdout:", completed.stdout)
 ```
 
 
-## Python Package Index
+## Python Package Index (PyPI)
 
+The [Python Package Index](https://pypi.org/) (PyPI) is a repository of software for the Python programming language.
+
+
+### Pip
+
+Symantic versioning: `M.n.p`, where:
+- `M` is a major version,
+- `n` is a minor version,
+- `p` is a patch/bagfix version.
+
+Pip version: `pip --version`.
+Upgrade pip: `pip install --upgrade pip`.
+List of installed packages: `pip list`.
+Install package: `pip install package-name`.
+Install specific version: `pip install package-name==M.n.p`.
+Install last compatible version: `pip install package-name==M.n.*`.
+Or different syntax for the same result: `pip install package-name~=M.n.p`.
+Or wild card with minor version: `pip install package-name==M.*`.
+Uninstall package: `pip uninstall package-name`.
+
+
+### Virtual Environment
+
+Setup isolated virtual environment: `python -m venv env`.
+Activate it: `env\Scripts\activate.bat`.
+Deactivate it: `deactivate`.
+
+
+### Pipenv
+
+Install pipenv: `pip install pipenv`.
+Install package and setup isolated virtual environment: `pipenv install package-name`.
+Get path to virtual environment directory: `pipenv --venv`.
+Activate virtual environment: `pipenv shell`.
+Deactivate it: `exit`.
+List of installed dependencies: `pipenv graph`
+Setup environment from Pipfile of a project: `pipenv install`.
+Setup environment from Pipfile.lock: `pipenv install --ignore-pipfile`
+Show outdated packages: `pipenv update --outdated`
+Update all depandencies: `pipenv update`
+Update one dependency: `pipenv update package-name`
+
+
+### Virtual Environment in VS Code
+
+Setup code runner path: in VS Code *Settings* setup setting `code-runner.executorMap` - `python` to value `path-to-venv-dir\\Scripts\\python.exe`
+Setup interpreter path: in VS Code *Settings* setup setting `python.pythonPath` to the same value.
+Restart VS Code and select interpreter in left bottom corner. Install pylint.
+
+
+### Pipfiles
+
+Pipfile - latest available (if compatible) versions of application dependencies.
+Pipfile.lock - exact versions of application dependencies to reproduce exact the sanme execution evironment on another machine.
+
+
+### Publishing Packages
+
+1. Setup tools: `pip install setuptools wheel twine`.
+2. Make this structure:
+    * `root`
+        * `Package`
+            * `__init__.py`
+            * `other-files.py`
+        * `setup.py` 
+        * `LICENSE` ([Find appropriate license](https://choosealicense.com/))
+        * `README.md`
+3. Source for `setup.py`:
+```py
+import setuptools
+from pathlib import Path
+
+
+setuptools.setup(
+    name="demo",
+    version="1.0.0",
+    author="Author",
+    description="Description",
+    long_description_content_type="text/markdown",
+    long_description=Path("README.md").read_text(),
+    packages=setuptools.find_packages(exclude=["data", "tests"]),
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+    ],
+    python_requires='>=3.8',
+)
+```
+4. Make source and build distribution packages: `py setup.py sdist bdist_wheel`.
+5. Upload to PyPI `twine upload dist/*`.
+
+
+### Docstrings
+
+```py
+""" Short module description.
+
+    Other description.
+"""
+
+
+class Class1:
+    """ Class description. """
+
+    def function1(self, param1):
+        """
+        Short function desctiption.
+
+        Parameters:
+        param1 (type): Description.
+
+        Return:
+        type: Description.
+        """
+        pass
+```
+
+
+## Popular Python Packages
+
+
+### API
+
+API - Application Programming Interface.  
+REST - Representational State Transfer.
+
+[Yelp](https://www.yelp.com/)
+
+```py
+# config.py
+
+
+api_key = "key..."
+```
+```py
+# app.py
+
+
+import requests
+import config
+
+
+url = "https://api.yelp.com/v3/businesses/search"
+
+headers = {
+    "Authorization": "Bearer " + config.api_key
+}
+params = {
+    "term": "Barber",
+    "location": "NYC"
+}
+response = requests.get(url, headers=headers, params=params)
+print(response)
+businesses = response.json()["businesses"]
+names = [business["name"] + "; " + str(business["rating"]) + " stars."
+         for business in businesses if business["rating"] > 4.5]
+[print(name) for name in names]
+# Output:
+# <Response [200]>
+# Next Level Barber Shop; 5.0 stars.
+# Gentlemen's Barbershop; 5.0 stars.
+# The Barber Shop; 5.0 stars.
+# The Kinsman Barber Shop; 5.0 stars.
+# Otis & Finn Barbershop; 5.0 stars.
+```
+
+
+### Sending Text Messages
+
+[Twilio](https://www.twilio.com/)
+
+```py
+# config.py
+
+
+account_sid = "sid..."
+auth_token = "token..."
+```
+```py
+# app.py
+
+
+from twilio.rest import Client
+
+
+client = Client(account_sid, auth_token)
+call = client.messages.create(
+    to="+12345678901",
+    from_="+12345678901",
+    body="Hello, world!"
+)
+```
+
+
+### Web Scraping
+
+`pipenv install twilio`
+
+```py
+import requests
+from bs4 import BeautifulSoup
+
+response = requests.get("https://stackoverflow.com/questions")
+soup = BeautifulSoup(response.text, "html.parser")
+
+for question in soup.select(".question-summary"):
+    title = question.select_one(".question-hyperlink").getText()
+    votes = question.select_one(".vote-count-post").getText()
+    print(f"{title} | {votes}")
+```
+
+
+### Browser Automation
+
+`pipenv install selenium`
+
+Browser drivers: [`selenium` package page](https://pypi.org/project/selenium/)
+
+```py
+from selenium import webdriver
+
+
+browser = webdriver.Chrome()
+browser.get("https://github.com")
+
+browser.maximize_window()
+
+sign_in_link = browser.find_element_by_link_text("Sign in")
+sign_in_link.click()
+
+username_box = browser.find_element_by_id("login_field")
+username_box.send_keys("login...")
+password_box = browser.find_element_by_id("password")
+password_box.send_keys("password...")
+password_box.submit()
+
+assert "login..." in browser.page_source
+
+profile_link = browser.find_element_by_class_name("user-profile-link")
+link_label = profile_link.get_attribute("innerHTML")
+assert "password..." in link_label
+
+browser.quit()
+```
+
+
+### Working with PDFs
+
+`pipenv install pypdf2`
+
+```py
+import PyPDF2
+
+
+with open("Retainer Agreement.pdf", "rb") as file:
+    reader = PyPDF2.PdfFileReader(file)
+    print(reader.numPages)
+    page = reader.getPage(0)
+    page.rotateClockwise(90)
+    writer = PyPDF2.PdfFileWriter()
+    writer.addPage(page)
+    with open("rotated.pdf", "wb") as output:
+        writer.write(output)
+
+merger = PyPDF2.PdfFileMerger()
+file_names = ["Retainer Agreement.pdf", "rotated.pdf"]
+for file_name in file_names:
+    merger.append(file_name)
+merger.write("combined.pdf")
+```
+
+
+### Working with Excel Spreadsheets
+
+`pipenv install openpyxl`
+
+```py
+import openpyxl
+
+
+# wb = openpyxl.Workbook()
+wb = openpyxl.load_workbook("transactions.xlsx")
+print(wb.sheetnames)
+# Output: ['Sheet1']
+
+# wb.create_sheet("Sheet2", 0)
+# wb.remove_sheet(sheet)
+sheet = wb["Sheet1"]
+
+cell = sheet["A1"]
+print("Cell", cell.coordinate, "Value", cell.value)
+# Output: Cell A1 Value transaction_id
+
+print("Row", cell.row, "Column", cell.column)
+# Output: Row 1 Column 1
+
+for row in range(1, sheet.max_row + 1):
+    for column in range(1, sheet.max_column + 1):
+        cell = sheet.cell(row, column)
+        if cell.row == 4 and cell.column == 3:
+            print(cell.value)
+# Output: 7.95
+
+column_cells = sheet["a"]
+columns_cells = sheet["a:c"]
+cells = sheet["a2:c4"]
+cells = sheet[2:4]
+
+sheet.append((1, 2, 3))
+
+wb.save("transactions2.xlsx")
+```
+
+> **NOTES**
+> Command Query Separation - principle in computer programming which states that function should either be a command (that perform an action to change the state of a system) or a query (that returns an answer to the caller without changing state or causing side effects) but not both.
+
+
+### NumPy
+
+`pipenv install numpy`
+
+```py
+import numpy as np
+
+
+print(np.array([1, 2, 3]))
+# Output: [1 2 3]
+
+array = np.array([[1, 2, 7], [4, 5, 6]])
+print(array)
+# Output:
+# [[1 2 7]
+#  [4 5 6]]
+
+print(array.shape)
+# Output: (2, 3)
+
+print(np.zeros((3, 4), dtype=int))
+# Output:
+# [[0 0 0 0]
+#  [0 0 0 0]
+#  [0 0 0 0]]
+
+print(np.ones((3, 4), dtype=int))
+# Output:
+# [[1 1 1 1]
+#  [1 1 1 1]
+#  [1 1 1 1]]
+
+print(np.full((3, 4), 5, dtype=int))
+# Output:
+# [[5 5 5 5]
+#  [5 5 5 5]
+#  [5 5 5 5]]
+
+print(np.random.random((3, 4)))
+# Output:
+# [[0.35456708 0.1457123  0.37496737 0.32719519]
+#  [0.29711852 0.71128895 0.91400756 0.07170448]
+#  [0.417366   0.69871866 0.99237448 0.93075956]]
+
+print(array[1, 2])
+# Output: 6
+
+print(array > 3)
+# Output:
+# [[False False  True]
+#  [ True  True  True]]
+
+print(array[array > 4])
+# Output: [7 5 6]
+
+print(np.sum(array))
+# Output: 25
+
+print(np.round(np.random.random((2, 2))))
+# Output:
+# [[0. 0.]
+#  [1. 0.]]
+
+dimensions_inch = np.array([1, 2, 3])
+dimensions_cm = dimensions_inch * 2.54
+print(dimensions_cm)
+# Output: [2.54 5.08 7.62]
+```
+
+
+## Building Web Applications with Django

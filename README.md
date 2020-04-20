@@ -131,13 +131,18 @@ Just my personal **sandbox** to take some practice and try different *technologi
 * Find English spell checker extension for VS Code.
 * Find extension for preview Markdown.
 * Find extension for margins.
-* Define comments format.
-* Define format for main page.
+* Define comments format (read PEP8, use # or "?).
+* Define format for main page (Clear, private?).
+* Define format for sytopsis (group links, terms)
 * Change repository name (Syllabus, Curriculum).
 * What is CI / CD exactly?
+* Why we can't type in built-in terminal?
 * Python: What is a real example of binary file? Excercise to work with binary files.
 * Python: What are under the hood realizations of tuples and lists in Python (arrays, linked lists)?
 * Python: Running External Programs on Windows.
+* Python: How to conspect command line commands?
+* Python: What is rope package, why it is related to renaming?
+* Python: How to run pydoc on Windows?
 * Algorithms: What is tail recursion?
 * Algorithms: What is Merge sort?
 * Algorithms: How is dictionary created as hash table and how does it grow in Python?
