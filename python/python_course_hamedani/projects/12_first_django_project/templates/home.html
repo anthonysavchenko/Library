@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <ul>
+        <li>
+            <a href="{% url 'movies:index' %}">Movies</a>
+        </li>
+        <li>
+            <a href="/api/movies/">API</a>
+        </li>
+    </ul>
+{% endblock %}

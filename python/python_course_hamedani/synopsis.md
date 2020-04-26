@@ -5,6 +5,7 @@
 > **IMPORTANT TERMINOLOGY**
 > DRY - Don't Repeat Yourself.
 > Duck Typing - dynamically typed language definition (if it walks like a duck and quacks like a duck, it is a duck.).
+> WEGI - Web Server Gate Interface.
 
 
 > **FURTHER READING**
@@ -2129,3 +2130,76 @@ print(dimensions_cm)
 
 
 ## Building Web Applications with Django
+
+WSGI - Web Server Gate Interface.
+
+**Main Commands**
+
+Install django: `pipenv install django==2.1`.  
+Activate virtual environment: `pipenv shell`.  
+Install pylint-django: `pipenv install pylint-django`. And add line `load-plugins=pylint-django` in new file `.pylintrc` in the root of the project.  
+Create new project: `django-admin startproject vidly .`.  
+Start web server: `py manage.py runserver`. By defalut port is `8000`, but we can specify different one in the end of this command.  
+Stop web server: `Ctrl` + `C`.  
+Create new app: `py manage.py startapp movies`.  
+Create migration files: `py manage.py makemigrations`.  
+Apply migrations: `py manage.py migrate`.  
+Look at SQL commands in migration: `py manage.py sqlmigrate movies 0001`.  
+Create SuperUser: `py manage.py createsuperuser`.  
+
+**Django project architecture**
+
+MVC arcitectural pattern | django
+-------------------------|-------
+Model | Model
+View | Template
+Controller | View
+
+**App structure**
+
+View functions in `views.py` take request and return response.  
+`urlpatterns` in `urls.py` map end-points to view functions or another url patterns.  
+Models in `models.py` define app models.  
+`migration` directory stores migrations.  
+Registrations in `admin.py` add models to administration page.  
+Templates are in `templates` folder.  
+
+**Admin**
+
+Credentials in first django project:  
+Login: admin  
+Email: anthony.savchenko@gmail.com  
+Password: admin#21  
+
+**Database API**
+
+```py
+# SELECT * FROM movies_movie
+Movie.objects.all()
+
+# SELECT * FROM movies_movie WHERE release_year = 1984
+Movie.objects.filter(release_year=1984)
+
+# SELECT * FROM movies_movie WHERE id = 1
+Movie.objects.get(id=1)
+```
+
+**API**
+
+Frameworks:
+- `django-tastypie`
+- `djangorestframework`
+
+URL - Uniform Resource Locator.
+
+**Deployment on Heroku**
+
+Prerequisites:
+- git,
+- Heroku CLI,
+- Heroku account,
+- gunicorn web server: `pipenv install gunicorn`.
+- Add static directory in the root directory and path to it into the `setting.py`: `STATIC_ROOT = os.path.join(BASE_DIR, 'static')`.
+- Collect static files: `py manage.py collectstatic`.
+- whitenoise for serving static files: `pipenv install whitenoise`.
+- Add Middleware in `setting.py`: `'whitenoise.middleware.WhiteNoiseMiddleware',`.
