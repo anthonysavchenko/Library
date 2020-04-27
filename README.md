@@ -27,6 +27,8 @@ Just my personal **sandbox** to take some practice and try different *technologi
     * [MVC](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller)
 * HTML and CSS
     * [MDN HTML Basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics)
+* JavaScript
+    * [Using Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)
 * Python
     * [Python Developer Interview](https://www.youtube.com/watch?v=VFBXx7O9BxU)
     * C/C# exrtensions, speed of Python
@@ -80,6 +82,7 @@ Just my personal **sandbox** to take some practice and try different *technologi
     * Design Patterns
 * Web Development
     * HTTP, HTTPS, SSL
+        * Standart request numbers
     * Frontend
         * HTML and CSS
         * JavaScript
@@ -118,6 +121,8 @@ Just my personal **sandbox** to take some practice and try different *technologi
 * Linux / macOS
 * Docker
 * Markdown
+* Elastic (Kibana, Search)
+* VS Code
 
 
 ## VS Studio
@@ -137,17 +142,26 @@ Just my personal **sandbox** to take some practice and try different *technologi
 * Change repository name (Syllabus, Curriculum).
 * What is CI / CD exactly?
 * Why we can't type in built-in terminal?
+* Python: Try to install x64 version.
 * Python: What is a real example of binary file? Excercise to work with binary files.
 * Python: What are under the hood realizations of tuples and lists in Python (arrays, linked lists)?
 * Python: Running External Programs on Windows.
 * Python: How to conspect command line commands?
 * Python: What is rope package, why it is related to renaming?
 * Python: How to run pydoc on Windows?
+* Python: Infinity?
+* Python: Zen coding language.
+* Python: How to remove pylint ext. error: Class 'Movie' has no 'objects' member?
+* Python: Continue with django and Bootstrap (https://getbootstrap.com/).
+* Python: How git repo works inside another repo when deploying on Heroku?
 * Algorithms: What is tail recursion?
 * Algorithms: What is Merge sort?
 * Algorithms: How is dictionary created as hash table and how does it grow in Python?
 * Algorithms: How do other types realized in Python?
 * Algorithms: What are other collections in Python (deque, ...)?
 * Algorithms: Try to add pictures using tablet and pen.
+* Algorithms: Get to know Bellman-Ford algorithm for graph with negative-weight edges.
+* Git: How to add empty directory to repo?
+* VS Code: How to separate windows on two screens?
 
 Theory / Practice / Community / Certification / CV / Job ads

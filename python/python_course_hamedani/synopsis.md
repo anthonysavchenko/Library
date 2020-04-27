@@ -2203,3 +2203,96 @@ Prerequisites:
 - Collect static files: `py manage.py collectstatic`.
 - whitenoise for serving static files: `pipenv install whitenoise`.
 - Add Middleware in `setting.py`: `'whitenoise.middleware.WhiteNoiseMiddleware',`.
+- After creating Heroku app add it's name in `ALLOWED_HOSTS` in `settings.py`.
+
+Deployment:
+- `git init`.
+- `git add .`.
+- `git commit -m "Initial commit."`.
+- `heroku login`.
+- `heroku create`.
+- `git push heroku master`.
+- `heroku ps:scale web=1`.
+- `heroku open`.
+
+Adding changes:
+- `git add .`.
+- `git commit -m "Message."`.
+- `git push heroku master`.
+
+
+## Machine Learning with Python
+
+Libraries:
+- Numpy
+- Pandas
+- MatPlotLib
+- Scikit-Learn
+
+Tools:
+- Anacondas
+- Jupyter Noteboke
+
+```py
+import pandas as pd
+df = pd.read_csv('vgsales.csv')
+df.shape
+df.describe()
+df.values
+df
+```
+
+```py
+import pandas as pd
+import joblib as jl
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+from sklearn import tree
+
+
+# 1. Import the Data.
+music_data = pd.read_csv('music.csv')
+
+# 2. Clean the Data.
+X = music_data.drop(columns=['genre'])
+y = music_data['genre']
+
+# 3. Split the Data into Training/Test Sets.
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+# 4. Create a Model (choose an algorithm).
+model = DecisionTreeClassifier()
+
+# 5. Train the Model.
+model.fit(X_train, y_train)
+
+# 6. Make Predictions.
+predictions = model.predict(X_test)
+
+# 7. Evaluate and Improve.
+score = accuracy_score(y_test, predictions)
+score
+
+
+# Save to file.
+jl.dump(model, 'music-recommender.joblib')
+
+# Load from file.
+model = jl.load('music-recommender.joblib')
+
+
+# Visualize to file.
+tree.export_graphviz(model,
+                     out_file='music_recommender.dot',
+                     feature_names=['age', 'gender'],
+                     class_names=sorted(y.unique()),
+                     label='all',
+                     rounded=True,
+                     filled=True)
+
+
+# Show predictions.
+predictions = model.predict([ [21, 1], [22, 0] ])
+predictions
+```

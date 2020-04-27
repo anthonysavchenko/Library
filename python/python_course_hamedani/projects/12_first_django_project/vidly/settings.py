@@ -25,7 +25,9 @@ SECRET_KEY = ')10&wqjhtkqnf929bo#+fsbri#=3fh)dtuc0zo&fw@r8qi8r$('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'sleepy-woodland-80696.herokuapp.com'
+]
 
 
 # Application definition
