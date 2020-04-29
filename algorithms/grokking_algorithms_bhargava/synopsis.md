@@ -170,7 +170,7 @@ Delete | O(1) | O(n)
 
 ## Breadth-First Search (BFS)
 
-BFS finds:
+In unweighted directed graph BFS finds:
 - whether there is a way from one node to another,
 - shortest way in case it exists.
 
@@ -206,7 +206,7 @@ def breadth_first_search(graph, start, search_for, debug=False):
     return False
 
 
-# Graph can be a dictionary (wich is hash table).
+# Graph can be a dictionary (wich is a hash table).
 # graph = {}
 # graph["you"] = ["alice", "bob", "claire"]
 # graph["bob"] = ["anuj", "peggy"]
@@ -238,3 +238,72 @@ breadth_first_search(graph, 0, 4, debug=True)
 
 
 ## Dijkstra's algorithm
+
+DAG - Directed Acyclic Graph.
+
+Dijkstra's algorithm works in weighted directed acyclic graphs without negative-weight edges.
+
+```py
+def dijkstras_search(graph, start, search_for, debug=False):
+    node = start
+    routes_weights = {start: 0}
+    parents = {}
+    processed = []
+    while node is not None and node != search_for:
+        if debug:
+            print("Found lowest route weight node to check his neighbors:", node)
+        for next_node, next_node_edge_weight in graph[node].items():
+            next_node_route_weight = routes_weights[node] + \
+                next_node_edge_weight
+            if next_node not in routes_weights or next_node_route_weight < routes_weights[next_node]:
+                routes_weights[next_node] = next_node_route_weight
+                parents[next_node] = (
+                    *parents[node], node) if node in parents else (node,)
+                if debug:
+                    parent_route = (
+                        *parents[node], node) if node in parents else (node,)
+                    print(
+                        f"Updated route weight: {parent_route} -> {next_node} = {next_node_route_weight}")
+        processed.append(node)
+        lowest_route_weight_node = None
+        for node, route_weight in routes_weights.items():
+            if (lowest_route_weight_node == None
+                    or route_weight < routes_weights[lowest_route_weight_node]) \
+                    and node not in processed:
+                lowest_route_weight_node = node
+        node = lowest_route_weight_node
+    if search_for in parents:
+        return *parents[search_for], search_for
+    return None
+
+
+graph = {
+    "Chicago": {
+        "San Francisco": 6,
+        "Washington": 2,
+        "Seattle": 3,
+    },
+    "San Francisco": {
+        "New York": 3,
+    },
+    "Washington": {
+        "San Francisco": 3,
+        "New York": 7,
+    },
+    "Seattle": {
+        "Los Angeles": 3,
+    },
+    "Los Angeles": {
+        "New York": 1,
+    },
+    "New York": {}
+}
+
+
+print("Answer:", dijkstras_search(graph, "Chicago", "New York", debug=True))
+```
+
+Questions:
++ Complexity?
++ Infinity?
+- Add pictures.
