@@ -3,16 +3,22 @@
 Just my personal **sandbox** to take some practice and try different *technologies*.
 
 
----
+## Reference Book
 
 * Algorithms and Data Structures
     * [Grokking Algorithms. Aditya Bhargava](https://github.com/anthonysavchenko/sandbox/blob/master/algorithms/grokking_algorithms_bhargava/synopsis.md)
+* HTTP
+    * [HTTP with a simple language. *By aruseni*](https://github.com/anthonysavchenko/sandbox/blob/master/http/http_with_a_simple_language_by_aruseni/synopsis.md)
 * Python
     * [The Complete Python Course. Mosh Hamedani](https://github.com/anthonysavchenko/sandbox/blob/master/python/python_course_hamedani/synopsis.md)
+* C/C++
+* C#
 * Markdown
     * [Markdown Guide. Matt Cone](https://github.com/anthonysavchenko/sandbox/blob/master/markdown/markdown_guide_cone/synopsis.md)
-
----
+* HTML
+* CSS
+* JavaScript
+    * React
 
 
 ## Materials Research
@@ -25,6 +31,7 @@ Just my personal **sandbox** to take some practice and try different *technologi
     * [Bhargava Book Review](https://medium.com/hackernoon/grokking-algorithms-book-review-aa4459da93f5)
     * [Structure and Interpretation of Computer Program. Harold Abelson](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book.html)
     * [MVC](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller)
+    * [Mosh](https://forum.codewithmosh.com/t/general)
 * HTML and CSS
     * [MDN HTML Basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics)
 * JavaScript
@@ -154,6 +161,7 @@ Just my personal **sandbox** to take some practice and try different *technologi
 * Python: How to remove pylint ext. error: Class 'Movie' has no 'objects' member?
 * Python: Continue with django and Bootstrap (https://getbootstrap.com/).
 * Python: How git repo works inside another repo when deploying on Heroku?
+* Python: Research the proccess of "compilation" or interpretation.
 * Algorithms: What is tail recursion?
 * Algorithms: What is Merge sort?
 * Algorithms: How is dictionary created as hash table and how does it grow in Python?
