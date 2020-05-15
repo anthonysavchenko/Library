@@ -17,7 +17,6 @@
 
 ## Futher reading
 
-* [OSI](https://en.wikipedia.org/wiki/OSI_model)
 * SOAP
 * XML-RPC
 * WebDAV
@@ -26,6 +25,8 @@
 * SSL
 * TLS
 
+
+## 
 
 HTTP (HyperText Transport Protocol) is protocol initially intended for transfering hypertext documents. It is an application-layer protocol (high or 7th layer) according to OSI. Current protocol version is 1.1, specification is RFC2616. HTTP is used as a transport for other apllied protocols: SOAP, XML-RPC and WebDAV. Many API are using HTTP for transfering data in any format, e.g. XML or JSON. HTTP works over TCP/IP connection and uses 80 TCP port by default or any other TCP port if desired.
 
@@ -80,5 +81,7 @@ Body
 * `Header` - Header name.
 * `Value` - Header value.
 * `Body` - Body content.
+
+## Security
 
 HTTPS (HyperText Transfer Protocol Secure) - secure extension of HTTP protocol to pack transfering data into SSL or TLS protocols. It uses 443 TCP port by default.
