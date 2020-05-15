@@ -9,7 +9,7 @@ Just my personal **sandbox** to take some practice and try different *technologi
     * [Grokking Algorithms. Aditya Bhargava](https://github.com/anthonysavchenko/sandbox/blob/master/algorithms/grokking_algorithms_bhargava/synopsis.md)
 * HTTP
     * [HTTP with a simple language. *By aruseni*](https://github.com/anthonysavchenko/sandbox/blob/master/http/http_with_a_simple_language_by_aruseni/synopsis.md)
-    * [OSI Model. *From Wikipedia*](https://github.com/anthonysavchenko/sandbox/blob/master/http/osi_model_from_wifipedia/synopsis.md)
+    * [OSI Model. *From Wikipedia*](https://github.com/anthonysavchenko/sandbox/blob/master/http/osi_model_from_wikipedia/synopsis.md)
 * Python
     * [The Complete Python Course. Mosh Hamedani](https://github.com/anthonysavchenko/sandbox/blob/master/python/python_course_hamedani/synopsis.md)
 * C/C++
