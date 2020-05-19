@@ -11,6 +11,10 @@ Just my personal **sandbox** to take some practice and try different *technologi
     * [HTTP with a simple language. *By aruseni*](https://github.com/anthonysavchenko/sandbox/blob/master/http/http_with_a_simple_language_by_aruseni/synopsis.md)
     * [OSI Model. *From Wikipedia*](https://github.com/anthonysavchenko/sandbox/blob/master/http/osi_model_from_wikipedia/synopsis.md)
     * [HTTP Protocol. *By Bibilov*](https://github.com/anthonysavchenko/sandbox/blob/master/http/http_protocol_by_bibilov/synopsis.md)
+
+    * [Computer networks and telecommunication systems. *By Andrey Sozykin*](https://github.com/anthonysavchenko/sandbox/blob/master/http/networks_sozykin/synopsis.md)
+
+    * [Internet Protocol Suite. *From Wikipedia*](https://en.wikipedia.org/wiki/Internet_protocol_suite)
 * Python
     * [The Complete Python Course. Mosh Hamedani](https://github.com/anthonysavchenko/sandbox/blob/master/python/python_course_hamedani/synopsis.md)
 * C/C++

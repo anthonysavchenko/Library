@@ -23,6 +23,7 @@
 * FTP - File Transfer Protocol.
 * TELNET - TELetype NETwork.
 
+
 ## Futher reading
 
 * [RPC](https://en.wikipedia.org/wiki/Remote_procedure_call)
@@ -54,7 +55,7 @@ IEEE 802 divides the data link layer into two sublayers:
 * Medium access control (MAC) layer - responsible for controlling how devices in a network gain access to a medium and permission to transmit data.
 * Logical link control (LLC) layer - responsible for identifying and encapsulating network layer protocols, and controls error checking and frame synchronization.
 
-The local network addresses used in IEEE 802 networks are called media access control (MAC) addresses. MAC address is intendded as a unique serial number. MAC addresses are typicaly assigned to network interface hardware at the time of manufacture. The most significant part of the address identifies the manufacturer, who assign the remainder of the address, thus provide a potentially unique address.
+The local network addresses used in IEEE 802 networks are called media access control (MAC) addresses. MAC address is intended as a unique serial number. MAC addresses are typicaly assigned to network interface hardware at the time of manufacture. The most significant part of the address identifies the manufacturer, who assign the remainder of the address, thus provide a potentially unique address.
 
 In programming data link layer is represented with a network adapter driver.
 
@@ -63,7 +64,7 @@ Protocols: IEEE 802.11 Wi-Fi, Point-to-Point Protocol over Ethernet (PPPoE), etc
 
 ## Layer 3: Network Layer
 
-The network layer is intendded to determine a route to transfer data and translate physical network addresses to logical ones.
+The network layer is intended to determine a route to transfer data and translate physical network addresses to logical ones.
 
 Protocols: Internet Protocol (IP/IPv4/IPv6), Internet Protocol Security (IPSec), etc.
 

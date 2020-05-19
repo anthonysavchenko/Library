@@ -13,6 +13,7 @@
 ## References
 
 * [RFC2616 Specification](https://tools.ietf.org/html/rfc2616)
+* [IP, TCP, and HTTP](https://www.objc.io/issues/10-syncing-data/ip-tcp-http/)
 
 
 ## Futher reading
