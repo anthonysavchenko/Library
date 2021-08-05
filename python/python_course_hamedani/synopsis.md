@@ -11,6 +11,7 @@
 > **FURTHER READING**
 > [Selenium and Python](https://selenium-python.readthedocs.io/)
 
+
 ## Getting Started
 
 Python - high-level cross-platform dynamic language.  
@@ -1752,7 +1753,7 @@ Symantic versioning: `M.n.p`, where:
 - `p` is a patch/bagfix version.
 
 Pip version: `pip --version`.
-Upgrade pip: `pip install --upgrade pip`.
+Upgrade pip: `python -m pip install --upgrade pip`.
 List of installed packages: `pip list`.
 Install package: `pip install package-name`.
 Install specific version: `pip install package-name==M.n.p`.
