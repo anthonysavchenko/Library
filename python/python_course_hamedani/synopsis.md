@@ -10,6 +10,12 @@
 
 > **FURTHER READING**
 > [Selenium and Python](https://selenium-python.readthedocs.io/)
+> [Pipenv: A Guide to the New Python Packaging Tool](https://realpython.com/pipenv-guide/)
+
+
+> **REFERENCES**
+> [Pipenv: Python Dev Workflow for Humans](https://pipenv.pypa.io/en/latest/)
+> [Pipenv for Easer Virtual Environments](https://mattgosden.medium.com/pipenv-for-easier-virtual-environments-69e1e520cde8)
 
 
 ## Getting Started
@@ -1747,6 +1753,8 @@ The [Python Package Index](https://pypi.org/) (PyPI) is a repository of software
 
 ### Pip
 
+pip - tool to install packages from PyPI.
+
 Symantic versioning: `M.n.p`, where:
 - `M` is a major version,
 - `n` is a minor version,
@@ -1762,27 +1770,35 @@ Or different syntax for the same result: `pip install package-name~=M.n.p`.
 Or wild card with minor version: `pip install package-name==M.*`.
 Uninstall package: `pip uninstall package-name`.
 
+*This method is classic but old-fashioned*
+
 
 ### Virtual Environment
 
-Setup isolated virtual environment: `python -m venv env`.
+Setup isolated virtual environment: `python -m venv env`. `env` - name of the environment.
 Activate it: `env\Scripts\activate.bat`.
 Deactivate it: `deactivate`.
+
+*This method is classic but old-fashioned*
 
 
 ### Pipenv
 
+pipenv - tool that combines `pip` and Virtual Environments into a single toolchain (equivalent to npm in JavaScript world). It`s a depandancy manager for Python projects.
+
 Install pipenv: `pip install pipenv`.
-Install package and setup isolated virtual environment: `pipenv install package-name`.
+Install package, create dependancy managment files (Pipfile and Pipfile.lock) and setup isolated virtual environment: `pipenv install package-name` or `pipenv install --dev package-name` or `pipenv install` 
+(from `requirements.txt` or empty environment) or `pipenv --three`.
 Get path to virtual environment directory: `pipenv --venv`.
 Activate virtual environment: `pipenv shell`.
 Deactivate it: `exit`.
 List of installed dependencies: `pipenv graph`
-Setup environment from Pipfile of a project: `pipenv install`.
+Setup environment from Pipfile of a project: `pipenv install` or `pipenv install --dev`.
 Setup environment from Pipfile.lock: `pipenv install --ignore-pipfile`
 Show outdated packages: `pipenv update --outdated`
 Update all depandencies: `pipenv update`
 Update one dependency: `pipenv update package-name`
+Run project: `pipenv run python main.py` or `pipenv run python main.py`
 
 
 ### Virtual Environment in VS Code
