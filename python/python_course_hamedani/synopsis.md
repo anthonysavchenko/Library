@@ -1769,6 +1769,8 @@ Install last compatible version: `pip install package-name==M.n.*`.
 Or different syntax for the same result: `pip install package-name~=M.n.p`.
 Or wild card with minor version: `pip install package-name==M.*`.
 Uninstall package: `pip uninstall package-name`.
+Install from text file: `pip install -r requirements.txt`
+Save to text file: `pip freeze > requirements.txt`
 
 *This method is classic but old-fashioned*
 
@@ -1787,8 +1789,8 @@ Deactivate it: `deactivate`.
 pipenv - tool that combines `pip` and Virtual Environments into a single toolchain (equivalent to npm in JavaScript world). It`s a depandancy manager for Python projects.
 
 Install pipenv: `pip install pipenv`.
-Install package, create dependancy managment files (Pipfile and Pipfile.lock) and setup isolated virtual environment: `pipenv install package-name` or `pipenv install --dev package-name` or `pipenv install` 
-(from `requirements.txt` or empty environment) or `pipenv --three`.
+Install package, create dependancy managment files (Pipfile and Pipfile.lock) and setup isolated virtual environment: `pipenv install package-name` or `pipenv install --dev package-name` or `pipenv install` (from `requirements.txt` or empty environment) or `pipenv --three`.
+Lock versions to Pipfile.lock: `pipenv lock`
 Get path to virtual environment directory: `pipenv --venv`.
 Activate virtual environment: `pipenv shell`.
 Deactivate it: `exit`.
@@ -1798,7 +1800,7 @@ Setup environment from Pipfile.lock: `pipenv install --ignore-pipfile`
 Show outdated packages: `pipenv update --outdated`
 Update all depandencies: `pipenv update`
 Update one dependency: `pipenv update package-name`
-Run project: `pipenv run python main.py` or `pipenv run python main.py`
+Run project: `pipenv run python main.py`
 
 
 ### Virtual Environment in VS Code
