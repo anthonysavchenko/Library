@@ -19,6 +19,7 @@ Just my personal **sandbox** to take some practice and try different *technologi
     * [The Complete Python Course. Mosh Hamedani](https://github.com/anthonysavchenko/sandbox/blob/master/python/python_course_hamedani/synopsis.md)
 * C/C++
 * C#
+    * [.NET Core 3.1 MVC REST API - Full Course. By Les Jackson](https://github.com/anthonysavchenko/sandbox/blob/master/c_sharp/dot_net_core_3_1_mvc_rest_api_jackson/synopsis.md)
 * SQL
     * [70-461, 761: Querying Microsoft SQL Server with Transact-SQL](https://www.udemy.com/course/70-461-session-2-querying-microsoft-sql-server-2012/)
 * Markdown
