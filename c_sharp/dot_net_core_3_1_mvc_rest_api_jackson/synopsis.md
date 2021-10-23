@@ -11,11 +11,11 @@
 
 [Model Binding in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/mvc/models/model-binding?view=aspnetcore-3.1)
 
+[nuget](https://www.nuget.org/)
+
 
 ## Acronyms and Terminology
 
-
-## Introduction
 
 `dotnet new webapi -n Commander` - create new project from template
 
@@ -26,14 +26,20 @@ directory
 
 `code .` - open folder in VS Code from the inside
 
-`dotnet restore` - restore packages, generate make file etc.
+`dotnet restore` - restore packages, generate make file etc
 
 `dotnet run` - run program
 
+`dotnet tool install --global dotnet-ef` - install Entity Framework CLI
 
-## Model and Controller
+`dotnet tool` - check if EF CLI is installed
 
+`dotnet tool update --global dotnet-ef` - update Entity Framework CLI
 
-## Dependancy Injection
+`dotnet ef migrations ad d Initial` - create new migration named Initial
 
-[Continue](https://www.youtube.com/watch?v=fmvcAzHpsk8&t=48m)
+`dotnet ef migrations remove` - remove last migration
+
+`dotnet ef database update` - update database with migrations
+
+[Continue](https://www.youtube.com/watch?v=fmvcAzHpsk8&t=1h31m)
