@@ -16,6 +16,10 @@
 
 ## Acronyms and Terminology
 
+* DTO - Domain Transfer Object. Used to **decouple** internal domain from external contract.
+
+
+## Usefull Commands
 
 `dotnet new webapi -n Commander` - create new project from template
 
@@ -28,7 +32,11 @@ directory
 
 `dotnet restore` - restore packages, generate make file etc
 
+`dotnet build` - build code
+
 `dotnet run` - run program
+
+`dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection` - install package from nuget
 
 `dotnet tool install --global dotnet-ef` - install Entity Framework CLI
 
@@ -42,4 +50,20 @@ directory
 
 `dotnet ef database update` - update database with migrations
 
-[Continue](https://www.youtube.com/watch?v=fmvcAzHpsk8&t=1h31m)
+
+## Difference Between PUT and PATCH
+
+PUT - "full" update (need to supply the entire object), inefficient, error prone, PATCH is the favoured approach.
+
+PATCH request body example:
+
+```c#
+[
+    {
+        "op": "replace",
+        "path": "/howto",
+        "value": "How to run program"
+    }
+]
+```
+
