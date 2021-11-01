@@ -44,7 +44,7 @@ directory
 
 `dotnet tool update --global dotnet-ef` - update Entity Framework CLI
 
-`dotnet ef migrations ad d Initial` - create new migration named Initial
+`dotnet ef migrations add Initial` - create new migration named Initial
 
 `dotnet ef migrations remove` - remove last migration
 
