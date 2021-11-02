@@ -151,12 +151,8 @@ Just my personal **sandbox** to take some practice and try different *technologi
 ## Questions and ideas
 
 * Find English spell checker extension for VS Code.
-* Find extension for preview Markdown.
-* Find extension for margins.
-* Define comments format (read PEP8, use # or "?).
 * Define format for main page (Clear, private?).
-* Define format for sytopsis (group links, terms)
-* Change repository name (Syllabus, Curriculum).
+* Define format for synopsis (group links, terms)
 * What is CI / CD exactly?
 * Why we can't type in built-in terminal?
 * Python: Try to install x64 version.
