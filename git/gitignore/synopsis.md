@@ -7,6 +7,8 @@
 
 [Source](https://git-scm.com/docs/gitignore)
 
+[How to Use a .gitignore File](https://www.pluralsight.com/guides/how-to-use-gitignore-file)
+
 
 ## Pattern Format
 
@@ -35,3 +37,8 @@ A leading `**` followed by a slash means match in all directories. For example, 
 A trailing `/**` matches everything inside. For example, `abc/**` matches all files inside directory `abc`, relative to the location of the `.gitignore` file, with infinite depth.
 
 A slash followed by two consecutive asterisks then a slash matches zero or more directories. For example, `a/**/b` matches `a/b`, `a/x/b`, `a/x/y/b` and so on.
+
+
+## Undo a commit
+
+`git reset HEAD~`
