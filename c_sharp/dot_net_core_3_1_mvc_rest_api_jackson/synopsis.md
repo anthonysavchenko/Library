@@ -38,6 +38,8 @@ directory
 
 `dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection` - install package from nuget
 
+`dotnet remove package AutoMapper.Extensions.Microsoft.DependencyInjection` - remove package from project
+
 `dotnet tool install --global dotnet-ef` - install Entity Framework CLI
 
 `dotnet tool` - check if EF CLI is installed

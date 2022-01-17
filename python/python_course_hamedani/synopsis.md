@@ -2250,7 +2250,7 @@ Libraries:
 
 Tools:
 - Anacondas
-- Jupyter Noteboke
+- Jupyter Notebook
 
 ```py
 import pandas as pd
