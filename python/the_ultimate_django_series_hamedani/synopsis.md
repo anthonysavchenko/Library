@@ -1,6 +1,6 @@
 # The Ultimate Django Series
 
-*By Mosh Hamedani*
+*By Moshfegh Hamedani*
 
 
 ## References
@@ -123,4 +123,7 @@ Expression
 
 
 ## The Admin Site
+
+`py manage.py createsuperuser` - create admin
+`py manage.pu changepassword admin` - change password
 
