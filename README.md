@@ -148,6 +148,28 @@ Just my personal **sandbox** to take some practice and try different *technologi
 * Select all occurrences of highlight `Ctrl` + `Shift` + `L`
 
 
+## Конференции
+
+- [PGProDay](https://pgconf.ru/pgproday-2025) - 28.01
+- `интересно` [PGConf.Russia](https://pgconf.ru/pgconf-2025) - 31.03-01.04
+- [big tech night](https://bigtechnight.ru) - 12.09
+- `интересно` [HighLoad++ (Genesis)](https://highload.ru/genesis) - 13.09
+- `интересно` [E-CODE](https://ecode.ozon.tech/) - 13.09-14.09
+- [MAGNIT TECH](https://bezpredela-magnit.tech) - 17.09
+
+Еще будут в этом году:
+
+- `интересно` [Selectel Tech Day](https://techday.selectel.ru/) - 08.10 c 11:00
+- `интересно` [avito.tech.conf](https://avito.tech/conference) - 17.10 c 10:00
+- `интересно` [TeamLeadConf](https://teamleadconf.ru/) - 10.11-11.11
+- `интересно` [HighLoad++](https://highload.ru/) - 06.11-07.11
+- `интересно` [Merge](https://moscow2025.mergeconf.ru/) - 12.03-13.03
+
+Надо посмотреть:
+
+https://jugru.org/
+
+
 ## Questions and ideas
 
 * Find English spell checker extension for VS Code.
