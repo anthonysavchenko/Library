@@ -160,6 +160,7 @@ Just my personal **sandbox** to take some practice and try different *technologi
 Еще будут в этом году:
 
 - `интересно` [Selectel Tech Day](https://techday.selectel.ru/) - 08.10 c 11:00
+- `интересно` [Airflow Summit 2025](https://airflowsummit.org/) - 15.10-16.10 c 17:00
 - `интересно` [avito.tech.conf](https://avito.tech/conference) - 17.10 c 10:00
 - `интересно` [TeamLeadConf](https://teamleadconf.ru/) - 10.11-11.11
 - `интересно` [HighLoad++](https://highload.ru/) - 06.11-07.11
