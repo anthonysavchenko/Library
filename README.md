@@ -1,6 +1,4 @@
-# Sandbox
-
-Just my personal **sandbox** to take some practice and try different *technologies*.
+# Библиотека
 
 
 ## Reference Book
@@ -151,25 +149,29 @@ Just my personal **sandbox** to take some practice and try different *technologi
 ## Конференции
 
 - [PGProDay](https://pgconf.ru/pgproday-2025) - 28.01
-- `интересно` [PGConf.Russia](https://pgconf.ru/pgconf-2025) - 31.03-01.04
+- [PGConf.Russia](https://pgconf.ru/pgconf-2025) - 31.03-01.04
+- [InBetween](https://inbetween.ru/) - 08.09
 - [big tech night](https://bigtechnight.ru) - 12.09
-- `интересно` [HighLoad++ (Genesis)](https://highload.ru/genesis) - 13.09
-- `интересно` [E-CODE](https://ecode.ozon.tech/) - 13.09-14.09
-- [MAGNIT TECH](https://bezpredela-magnit.tech) - 17.09
+- [HighLoad++ (Genesis)](https://highload.ru/genesis) - 13.09
+- [E-CODE](https://ecode.ozon.tech/) - 13.09-14.09
+- [DotNext](https://dotnext.ru/) - 18.09-19.09
+- [Selectel Tech Day](https://techday.selectel.ru/) - 08.10 c 11:00
+- [Airflow Summit 2025](https://airflowsummit.org/) - 15.10-16.10 c 17:00
+- [avito.tech.conf](https://avito.tech/conference) - 17.10 c 10:00
 
 Еще будут в этом году:
 
-- `интересно` [Selectel Tech Day](https://techday.selectel.ru/) - 08.10 c 11:00
-- `интересно` [Airflow Summit 2025](https://airflowsummit.org/) - 15.10-16.10 c 17:00
-- `интересно` [avito.tech.conf](https://avito.tech/conference) - 17.10 c 10:00
-- `интересно` [TeamLeadConf](https://teamleadconf.ru/) - 10.11-11.11
-- `интересно` [HighLoad++](https://highload.ru/) - 06.11-07.11
-- `интересно` [Merge](https://moscow2025.mergeconf.ru/) - 12.03-13.03
+- [Frontend Conf](https://frontendconf.ru/) - 20.10-21.10
+- [HolyJS](https://holyjs.ru/) - 29.10, 20.11-21.11
+- [TeamLeadConf](https://teamleadconf.ru/) - 10.11-11.11
+- [HighLoad++](https://highload.ru/) - 06.11-07.11
+- [Mobius](https://mobiusconf.com/) - 18.11-19.11
+- [Merge](https://moscow2025.mergeconf.ru/) - 12.03-13.03
 
-Надо посмотреть:
+## Люди
 
-https://jugru.org/
-
+- [Алексей Рыбак](https://devhands.ru/)
+- [Владимир Федорков](https://fournines.ru/)
 
 ## Questions and ideas
 
