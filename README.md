@@ -163,10 +163,11 @@
 
 - [Frontend Conf](https://frontendconf.ru/) - 20.10-21.10
 - [HolyJS](https://holyjs.ru/) - 29.10, 20.11-21.11
-- [TeamLeadConf](https://teamleadconf.ru/) - 10.11-11.11
 - [HighLoad++](https://highload.ru/) - 06.11-07.11
+- [TeamLeadConf](https://teamleadconf.ru/) - 10.11-11.11
 - [Mobius](https://mobiusconf.com/) - 18.11-19.11
-- [Merge](https://moscow2025.mergeconf.ru/) - 12.03-13.03
+
+- [Merge](https://moscow2025.mergeconf.ru/) - 12.03.26-13.03.26
 
 ## Люди
 
