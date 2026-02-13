@@ -125,5 +125,32 @@ Expression
 ## The Admin Site
 
 `py manage.py createsuperuser` - create admin
-`py manage.pu changepassword admin` - change password
+`py manage.py changepassword admin` - change password
 
+## Building RESTful APIs with Django REST Framework
+
+REST - REpresentational State Transfer (REST defines a banch of rules for clients and servers to communicate over the Web)
+
+An API that conforms to these rules is called RESTful
+
+Benefits:
+    - Fast
+    - Scalable
+    - Reliable
+    - Easy to understand
+    - Easy to change
+
+Consepts of RESTful:
+    - Resources
+    - Representations
+    - HTTP Methods
+
+Resource is like an object in our application (Product, Collection, Cart). We can access resource by its URL (Uniform Resource Locator)
+
+Resource representation is like description of the resourse in HTML, XML or JSON (JavaScript Object Notation).
+
+HTTP Methods: GET, POST, PUT, PATCH, DELETE
+
+### Django REST Framework
+
+`pipenv install djangorestframework` - install separate REST framework on top on Django
