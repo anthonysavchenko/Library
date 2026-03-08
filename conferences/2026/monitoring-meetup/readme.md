@@ -67,3 +67,20 @@ Incident response
 Latency, Traffic, Error, Saturation
 
 https://github.com/vlad-github/network-latency-test-for-mysql 100 000 -> 10 000 000
+
+**08.02.2026**
+
+## Postmortem
+
+Название инцидента. Дата
+Приоритет: (Security|Critical|Major|Normal)
+Как узнали
+Влияние
+Суть инцидента
+Root cause
+Что пошло не так
+Что отработало как нужно
+Action items
+Lessons learned
+Кто участвовал
+Таймлайн инцидента
