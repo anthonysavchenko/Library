@@ -6,7 +6,7 @@
 
 LLM - Large Language Model
 
-RAG - Retrieval-Augmented Gereration
+RAG - Retrieval-Augmented Generation
 
 Use cases: summarization, content generation, text classification, translation, data extraction, chat interfaces
 
@@ -14,3 +14,6 @@ Model's context window = our prompt (input), model's response, the chat history.
 
 Open sourse models: LLaMA (Meta), Mistral (european company)
 
+OpenAI models: https://developers.openai.com/api/docs/models
+
+8-9 Understanding and Calling Models - set up billing to try
