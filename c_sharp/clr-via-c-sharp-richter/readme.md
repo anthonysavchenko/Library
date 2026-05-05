@@ -20,6 +20,14 @@
 
 8. Если в результате сборки мусора не удалось освободить достаточно места для нового объекта, то получаем OutOfMemoryException
 
+
+https://habr.com/ru/articles/590475/
+
+https://professorweb.ru/my/csharp/optimization/level3/3_4.php
+
+https://www.jetbrains.com/help/dotmemory/NET_Memory_Management_Concepts.html
+
+
 - Как выглядит объект-тип? Он один для разных экземпляров одного класса? Как выглядит индекс блока синхронизации?
 
 - Как алгоритм работает по поколениям? Во время маркировки перебираются объекты всех поколений?
