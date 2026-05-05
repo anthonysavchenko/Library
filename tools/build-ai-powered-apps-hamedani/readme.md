@@ -6,7 +6,7 @@
 
 LLM - Large Language Model
 
-RAG - Retrieval-Augmented Gereration
+RAG - Retrieval-Augmented Generation
 
 Use cases: summarization, content generation, text classification, translation, data extraction, chat interfaces
 
