@@ -133,3 +133,61 @@ https://learn.microsoft.com/en-us/dotnet/api/system.idisposable.dispose
 И там же про DisposeAsync и await using
 
 И еще про ConfigureAwait: https://habr.com/ru/articles/482354/
+
+## 18.05.2026 Низкоуровневая работа с памятью: Span<T>, Memory<T>, stackalloc
+
+Span<T> и ReadOnlySpan<T> - ref struct, только в стэке, работает без выделения памяти
+
+Memory<T> и ReadOnlyMemory<T> - просто struct, может быть и на куче, может работать с асинхронщиной и т.д., работает без выделения памяти
+
+stackalloc - полезно для Span, может переполнить стэк
+
+**Вопросы:**
+
+Перемотать Span.ToString 00:34
+
+Перемотать и прочитать использование Memory 00:58
+
+Посмотреть HttpParser.cs Kestrel и другие примеры
+
+Что такое ref struct?
+
+Что такое ref-поля?
+
+## 20.05.2026 Продвинутое управление памятью: ArrayPool<T> и MemoryPool<T>
+
+Паттерн пул объектов
+
+ArrayPool<T> - предотвращяет затраты ресурсов GC на очистку массивов, вместо этого возвращает их в пул массивов
+
+MemoryPool<T>
+
+**Вопросы:**
+
+- Поискать описание паттерна пул объетов
+
+- ArrayPool вообще есть смысл использовть для ссылочных объектов?
+
+- Послушать микрофон 21:22 
+
+- Не совсем понял, в чем прикол MemoryPool по сравнению с ArrayPool. Посмотреть примеры кода и переслушать лекцию
+
+## 21.05.2026 Структуры на максималках: ref struct, readonly ref, in-параметры
+
+Модификаторы типа: ref, readonly, ref readonly; например, ref struct, readonly struct, ref readonly struct
+
+Модификаторы параметров: ref, readonly, in, out
+
+Модификаторы локальных переменных: ref, readonly
+
+**Вопросы:**
+
+- Подробнее почитать и попрактиковаться
+
+- Нюанс для readonly и in: теневое копирование
+
+- Какой-то Unsafe.Add, что там за помощь компилятора?
+
+- Пересмотреть MySpan и разобраться
+
+- Попробовать BenchmarkDotNet
