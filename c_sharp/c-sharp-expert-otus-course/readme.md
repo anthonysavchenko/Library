@@ -120,20 +120,6 @@
 
 ### 01:35 POH - Pinned Object Heap
 
-## Неуправляемые ресурсы (IDisposable.Dispose)
-
-Ресурсы бывают управляемые и не управляемые. Рекомендуется использовать подход к освобождению ресурсов через деструктор и IDisposable.Dispose.
-
-https://metanit.com/sharp/tutorial/8.2.php
-
-https://learn.microsoft.com/en-us/dotnet/api/system.idisposable.dispose
-
-Продолжить: https://learn.microsoft.com/en-us/dotnet/standard/garbage-collection/implementing-dispose
-
-И там же про DisposeAsync и await using
-
-И еще про ConfigureAwait: https://habr.com/ru/articles/482354/
-
 ## 18.05.2026 Низкоуровневая работа с памятью: Span<T>, Memory<T>, stackalloc
 
 Span<T> и ReadOnlySpan<T> - ref struct, только в стэке, работает без выделения памяти
@@ -191,3 +177,35 @@ MemoryPool<T>
 - Пересмотреть MySpan и разобраться
 
 - Попробовать BenchmarkDotNet
+
+## 25.05.2026 Работа с неуправляемыми ресурсами: IDisposableAsync, SafeHandle, NativeMemory
+
+### Освобождение неуправляемых ресурсов
+
+Только не управляемые ресурсы (файлы, сокеты, подключения БД, нативные хендлеры) необходимо детерминировано освобождать через реализацию IDisposable.Dispose()
+
+Рекомендуется реализовывать Disposable паттерн, где помимо "ручного" вызова Dispose предусмотрен его вызов из финализатора класса. См. https://learn.microsoft.com/en-us/dotnet/api/system.idisposable.dispose
+
+"Ручной" вызов рекомендуется делать автоматически, используя конструкцию using (синтаксический сахар)
+
+Также существует асинхронные версии, чтобы не блокировать поток в ожидании освобождения ресурса: IDisposableAsync.DisposeAsync() и await using
+
+Структуры тоже могут наследовать и реализовывать IDisposable.Dispose(), например, для освобождения ресурсов вложенных объектов
+
+### Финализаторы
+
+Финализаторы не рекомендуется использовать без необходимости (хрупкость, побочные эффекты, снижение производительности)
+
+### Продолжение 1:45
+
+**Вопросы:**
+
+- Продолжить: https://learn.microsoft.com/en-us/dotnet/standard/garbage-collection/unmanaged, там же про DisposeAsync и await using
+
+- Продолжить про ConfigureAwait: https://habr.com/ru/articles/482354/
+
+- Подробнее почитать про IAsyncDisposable и ValueTask
+
+- Как именно сборщик мусора обрабатывает объекты с финализаторами?
+
+- Попробовать sharplab.io
