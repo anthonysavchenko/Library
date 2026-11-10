@@ -178,7 +178,7 @@ MemoryPool<T>
 
 - Попробовать BenchmarkDotNet
 
-## 25.05.2026 Работа с неуправляемыми ресурсами: IDisposableAsync, SafeHandle, NativeMemory
+## 1.6. 25.05.2026 Работа с неуправляемыми ресурсами: IDisposableAsync, SafeHandle, NativeMemory
 
 ### Освобождение неуправляемых ресурсов
 
@@ -223,3 +223,5 @@ DllImport и его более современный аналог LibraryImport
 - Как именно сборщик мусора обрабатывает объекты с финализаторами?
 
 - Попробовать sharplab.io
+
+## [12. Lock-Free алгоритмы с Interlocked и Volatile](lectures/12-lock-free.md)

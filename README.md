@@ -30,6 +30,10 @@
 - DevOps
   - ! Конференция по мониторингу. Федаков
 
+Нужно еще отдельно изучить:
+await/async
+xUnit
+
 ## Конференции
 
 - [PGProDay](https://pgconf.ru/pgproday-2025) - 28.01
